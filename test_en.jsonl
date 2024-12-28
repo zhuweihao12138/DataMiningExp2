@@ -1,0 +1,250 @@
+{"id": "TEST1-1", "input_field": "When adding an edge, how will the system handle a situation where the specified value is not included in the `value_dict`?"}
+{"id": "TEST1-2", "input_field": "When using the LIMIT clause, if you query for the names of the first two people in the database, what names are returned?"}
+{"id": "TEST1-3", "input_field": "How to query existing roles and their related information in the database?"}
+{"id": "TEST1-4", "input_field": "How many nodes and edges can Tugraph create at most, and how many properties can be created on nodes and edges at most?"}
+{"id": "TEST1-5", "input_field": "I downloaded the 4.3.2 image, and it started successfully. After entering the container, I couldn't find the `setup.sh` script. Has the directory changed?"}
+{"id": "TEST1-6", "input_field": "When starting `lgraph_server` with the `-d start` option, doesn't it generate a PID file in the current working directory (pwd)? Is there a parameter to control the path of this PID file?"}
+{"id": "TEST1-7", "input_field": "If you are compiling TuGraph on an ARM machine (such as a Mac with an M1 chip), how should you modify the cmake command?"}
+{"id": "TEST1-8", "input_field": "What operation is performed on the directory specified by `cleanup_dir` in the startup parameters?"}
+{"id": "TEST1-9", "input_field": "What command is used to start TuGraph?"}
+{"id": "TEST1-10", "input_field": "What are the main methods used by the TuGraph team to optimize and improve parsing speed?"}
+{"id": "TEST1-11", "input_field": "When aborting a task that is currently being executed, which HTTP request method should be used?"}
+{"id": "TEST1-12", "input_field": "The `AllocVertexSubset` function is used to allocate a subset of vertices. This typically involves selecting or designating a specific group of vertices from a larger set, often for the purpose of performing operations or applying transformations specifically to that subset."}
+{"id": "TEST1-13", "input_field": "Error when importing 10GB of data on the web end."}
+{"id": "TEST1-14", "input_field": "The export formats supported by TuGraph?"}
+{"id": "TEST1-15", "input_field": "Besides adding EXPLAIN and PROFILE before statements, are there any other ways to optimize TuGraph?"}
+{"id": "TEST1-16", "input_field": "What parameters does the RpcSingleClient constructor require?"}
+{"id": "TEST1-17", "input_field": "How does Cython import modules related to OLAP and graph databases?"}
+{"id": "TEST1-18", "input_field": "When calling `db.addEdgeIndex`, what is the difference between the 'unique' parameter and the 'pair_unique' parameter?"}
+{"id": "TEST1-19", "input_field": "What are the advantages of graph databases over relational databases?"}
+{"id": "TEST1-20", "input_field": "When creating a node, I encountered the following error: `message: Vertex unique index value [xxx] is too long`. Does this mean that the property value is too long?"}
+{"id": "TEST1-21", "input_field": "When using the GET method to retrieve specific edge properties, what error code is returned if the edge does not have the specified property?"}
+{"id": "TEST1-22", "input_field": "What types of system environments does TuGraph provide to meet the needs of different users?"}
+{"id": "TEST1-23", "input_field": "What are the new spatial data types supported by TuGraph-DB?"}
+{"id": "TEST1-24", "input_field": "In the CREATE LABEL command, if you are creating a vertex label, which parameter should determine the primary property name?"}
+{"id": "TEST1-25", "input_field": "In HA mode, to whom can the client send requests for importing point-edge data?"}
+{"id": "TEST1-26", "input_field": "What exception is thrown when the `SetFields` method is called in a read-only transaction?"}
+{"id": "TEST1-27", "input_field": "The `GetVertexIndexIterator` function in `liblgraph_python_api.Transaction` is used to obtain what type of iterator?"}
+{"id": "TEST1-28", "input_field": "Can the `db.importor.dataImportor` function specify to continue on error and set the number of threads when importing data?"}
+{"id": "TEST1-29", "input_field": "When attempting to read a vertex that has already been indexed, which function should be used?"}
+{"id": "TEST1-30", "input_field": "When calling the function DeleteGraph, what exception is thrown if the operation is not authorized?"}
+{"id": "TEST1-31", "input_field": "When initializing the pagerank values for each node, how is the pagerank value calculated when the out-degree of a node is greater than 0?"}
+{"id": "TEST1-32", "input_field": "What data export formats does TuGraph support?"}
+{"id": "TEST1-33", "input_field": "When starting TuGraph, I encountered the following error: `0x00007f7e5f272900 FATAL include/fma-common/binary_buffer.h:289] CHECK(gpos_ + size <= ppos_) failed: reading beyond the array: required size=4, actual size=2`"}
+{"id": "TEST1-34", "input_field": "If the TRAVERSAL_PARALLEL flag is enabled in FrontierTraversal, what must the transaction be like?"}
+{"id": "TEST1-35", "input_field": "When importing data using a CSV file, how do the fields in the file correspond to the columns in the configuration file?"}
+{"id": "TEST1-36", "input_field": "When creating a vertex label, which parameters need to be specified?"}
+{"id": "TEST1-37", "input_field": "What is the default port number for TuGraph Browser?"}
+{"id": "TEST1-38", "input_field": "What method is used in the configuration to calculate the values displayed in the chart?"}
+{"id": "TEST1-39", "input_field": "Which team developed TuGraph?"}
+{"id": "TEST1-40", "input_field": "What problems does a graph learning system solve?"}
+{"id": "TEST1-41", "input_field": "What parameters does the `GetVertexByUniqueCompositeIndex` function require?"}
+{"id": "TEST1-42", "input_field": "How to configure the RPC port?"}
+{"id": "TEST1-43", "input_field": "What are the advantages of graph databases over relational databases when handling relationships?"}
+{"id": "TEST1-44", "input_field": "What is the default login password when using TuGraph Browser?"}
+{"id": "TEST1-45", "input_field": "What is the data type of the `field_value_strings` parameter in the first version of the `SetFields` function?"}
+{"id": "TEST1-46", "input_field": "Are DB and tuGraph Analytics run independently?"}
+{"id": "TEST1-47", "input_field": "What parameters does the RpcClient constructor require for user login?"}
+{"id": "TEST1-48", "input_field": "How to use the `lgraph_cypher` tool to submit a Cypher query in single command mode from the command line and save the results?"}
+{"id": "TEST1-49", "input_field": "Where is the persistent location for the data and log directories?"}
+{"id": "TEST1-50", "input_field": "In TuGraph's Traversal API, there are three ways to set the starting point for traversal: \n\n1. By specifying a single vertex ID.\n2. By providing a list of vertex IDs.\n3. By using a condition to select vertices that meet certain criteria."}
+{"id": "TEST1-51", "input_field": "What is the purpose of the method `SetField`?"}
+{"id": "TEST1-52", "input_field": "Which team developed the TuGraph-DB graph database?"}
+{"id": "TEST1-53", "input_field": "What system libraries are required for the streamlined runtime environment of TuGraph?"}
+{"id": "TEST1-54", "input_field": "The function `SetFrontier(std::function<bool(VertexIterator&)> root_vertex_filter)` utilizes the parameter `root_vertex_filter` in the following way:\n\nThe `root_vertex_filter` is a callable object (a function or a lambda expression) that takes a `VertexIterator&` as its argument and returns a boolean value. This filter is used to determine whether a given vertex should be included in the frontier. Specifically, the function iterates over the vertices, and for each vertex, it calls `root_vertex_filter` with the vertex iterator. If `root_vertex_filter` returns `true`, the vertex is added to the frontier; otherwise, it is excluded.\n\nIn summary, `root_vertex_filter` acts as a predicate to selectively include or exclude vertices from the frontier based on custom criteria defined by the user."}
+{"id": "TEST1-55", "input_field": "Does the RPM package include the new front-end page resources?"}
+{"id": "TEST1-56", "input_field": "May I ask how much resources are required to start the tugraph-runtime-centos7 image?"}
+{"id": "TEST1-57", "input_field": "When creating a composite index, what parameters need to be provided?"}
+{"id": "TEST1-58", "input_field": "One of the exceptions that the function `SetField` can throw is?"}
+{"id": "TEST1-59", "input_field": "What is TuGraphClient?"}
+{"id": "TEST1-60", "input_field": "What types of hardware platforms does TuGraph support?"}
+{"id": "TEST1-61", "input_field": "I want to ask about the format of the first two parameters for the byte stream import API: `boolean ret = client.importDataFromContent(personDesc, person, \",\", true, 16, \"default\", 1000);`. Are they in the same format as when executing the import script?"}
+{"id": "TEST1-62", "input_field": "What tags and attributes are used to indicate that a class is mapped to an edge type in OGM?"}
+{"id": "TEST1-63", "input_field": "What happens if an overflow occurs when using the operator+= or operator-= on a DateTime object?"}
+{"id": "TEST1-64", "input_field": "What are the conditions for the successful execution of the AlterEdgeLabelAddFields function?"}
+{"id": "TEST1-65", "input_field": "What type of numerical value are the edge weights in a weighted graph?"}
+{"id": "TEST1-66", "input_field": "How does the RPC communication protocol work?"}
+{"id": "TEST1-67", "input_field": "What is the role of a primary key in TuGraph?"}
+{"id": "TEST1-68", "input_field": "What type of exception is RpcException?"}
+{"id": "TEST1-69", "input_field": "The question is whether the `match` statement supports setting multiple attributes."}
+{"id": "TEST1-70", "input_field": "What performance improvements has TuGraph DB made with regard to Antlr4?"}
+{"id": "TEST1-71", "input_field": "What are the differences between TuGraph and OpenCypher in terms of the number of labels they can handle for nodes and relationships?"}
+{"id": "TEST1-72", "input_field": "What value does the function DeleteVertexIndex return upon successful execution?"}
+{"id": "TEST1-73", "input_field": "Is tugraph-analytics currently not supporting window functions?"}
+{"id": "TEST1-74", "input_field": "When the `CallProcedure` function is called, if the `json_format` parameter is set to `false`, what is the format of the returned result?"}
+{"id": "TEST1-75", "input_field": "In the PathTraversal class, which function is called to set the initial boundary through the passed filter?"}
+{"id": "TEST1-76", "input_field": "How long does the main deployment method of GeaBase take?"}
+{"id": "TEST1-77", "input_field": "In graph theory, what are the basic elements of a graph?"}
+{"id": "TEST1-78", "input_field": "Which programming languages does TuGraph support?"}
+{"id": "TEST1-79", "input_field": "In this code, how do you obtain the list of responses from the stored procedure?"}
+{"id": "TEST1-80", "input_field": "What is an RPC interface?\n\nAn RPC (Remote Procedure Call) interface is a protocol that allows a program to cause a subroutine or procedure to execute in another address space (commonly on another computer on a shared network) as if it were a local call. This is done without the programmer needing to have knowledge of network protocols. The main purpose of an RPC interface is to enable different software applications, possibly running on different operating systems and different hardware, to communicate with each other seamlessly."}
+{"id": "TEST1-81", "input_field": "In the text, what types of relationships does The Matrix participate in?"}
+{"id": "TEST1-82", "input_field": "What command is used to start the TuGraph server?"}
+{"id": "TEST1-83", "input_field": "What will happen if there is an identical unique_id when adding a vertex?"}
+{"id": "TEST1-84", "input_field": "Which hardware architectures does TuGraph support?"}
+{"id": "TEST1-85", "input_field": "How does the TuGraph-OGM project support Java developers in performing graph object mapping for the TuGraph database?"}
+{"id": "TEST1-86", "input_field": "What is the role of OPTIONAL MATCH in GQL?"}
+{"id": "TEST1-87", "input_field": "In the `loadProcedure` method, how can you control whether the procedure is read-only through parameters?"}
+{"id": "TEST1-88", "input_field": "In an RPC call, if the error code in the response is not indicating success, what type of exception is thrown?"}
+{"id": "TEST1-89", "input_field": "The `swap_id` function in the Transform operation is used to swap the identifiers of two elements. This can be particularly useful in scenarios where you need to interchange the IDs of items, such as in data manipulation tasks or when reorganizing data structures."}
+{"id": "TEST1-90", "input_field": "In the film scene demo, how can we use the Cypher language to query all the actors of the movie 'Forrest Gump' and the characters they played?"}
+{"id": "TEST1-91", "input_field": "How many basic algorithms are built into the TuGraph-DB graph database community edition?"}
+{"id": "TEST1-92", "input_field": "What are the three spatial data types supported by TuGraph-DB?"}
+{"id": "TEST1-93", "input_field": "Does the product support the Kylin operating system? Is it only supported by the enterprise edition?"}
+{"id": "TEST1-94", "input_field": "What is the format for storing Point type data in TuGraph-DB?"}
+{"id": "TEST1-95", "input_field": "What operations can users perform using the TuGraph embedding mode API?"}
+{"id": "TEST1-96", "input_field": "What is the date set by the default constructor of the Date class?"}
+{"id": "TEST1-97", "input_field": "What happens when the given `vertex_label` or `field` does not exist while using the `bool DeleteVertexIndex` function?"}
+{"id": "TEST1-98", "input_field": "In single-command mode, how can you use `lgraph_cypher` to execute a Cypher query via command-line arguments and display the results in a table format?"}
+{"id": "TEST1-99", "input_field": "How does the `reduce_plus` function handle its two parameters?"}
+{"id": "TEST1-100", "input_field": "Does it support undirected edges?"}
+{"id": "TEST1-101", "input_field": "What constructors does the `FieldData` class provide to initialize data of different types?"}
+{"id": "TEST1-102", "input_field": "How does TuGraph-DB help alleviate the烦恼 of choosing routes while traveling?\n\nNote: The word \"烦恼\" is directly translated as \"troubles\" or \"worries\" in English. For a more natural and contextually appropriate translation, it would be better to use \"concerns\" or \"headaches.\" Here is the refined version:\n\nHow does TuGraph-DB help alleviate the concerns of choosing routes while traveling?"}
+{"id": "TEST1-103", "input_field": "The `exists()` function is used to check whether a file or directory exists."}
+{"id": "TEST1-104", "input_field": "What are the minimum and recommended CPU core configurations for installing and deploying TuGraph hardware?"}
+{"id": "TEST1-105", "input_field": "What is the purpose of the MappedVid function?"}
+{"id": "TEST1-106", "input_field": "What happens when you try to update an existing edge but the label does not match the specified one?"}
+{"id": "TEST1-107", "input_field": "Is batch online import achieved through \"CREATE (n), (m)\"?"}
+{"id": "TEST1-108", "input_field": "What is the main function of the lgraph_backup tool?"}
+{"id": "TEST1-109", "input_field": "When retrieving all attributes of a certain node, which method and URI can be used to achieve this?"}
+{"id": "TEST1-110", "input_field": "What are the basic elements of a knowledge graph?"}
+{"id": "TEST1-111", "input_field": "Does TuGraph-DB support stored procedures? If so, which programming languages are supported for writing stored procedures?"}
+{"id": "TEST1-112", "input_field": "What is the purpose of the GetEdgeProp operation?"}
+{"id": "TEST1-113", "input_field": "What are the main functions of TuGraph-DB?"}
+{"id": "TEST1-114", "input_field": "What exception is thrown when the response to a Cypher request does not contain the correct results?"}
+{"id": "TEST1-115", "input_field": "When is the 2024 annual feature update expected to introduce HA support for the Witness role and management tools?"}
+{"id": "TEST1-116", "input_field": "TuGraph-DB uses CMake as its build tool and supports the C++17 standard."}
+{"id": "TEST1-117", "input_field": "What is `Cython.cimports.libcpp.unordered_map`?"}
+{"id": "TEST1-118", "input_field": "Which two options need to be specified for the TuGraph data preloading command?"}
+{"id": "TEST1-119", "input_field": "Does it support GQL statements?"}
+{"id": "TEST1-120", "input_field": "What are the version numbers of \"log4j-core\" and \"guava\" mentioned in the configuration?"}
+{"id": "TEST1-121", "input_field": "The method `SetUserGraphAccess` of the class `liblgraph_python_api.Galaxy` is primarily used for setting access permissions for users on a graph. This allows you to control which users can read from, write to, or manage specific graphs within the database."}
+{"id": "TEST1-122", "input_field": "How does TuGraph-DB output logs during the process of running unit tests?"}
+{"id": "TEST1-123", "input_field": "What is a scenario where the \"Nav\" statement is used in a GeaBase query?"}
+{"id": "TEST1-124", "input_field": "I need to quickly locate a specific relationship edge between two vertices. Is there an interface for finding a relationship edge through a pair unique index? The requirement is to update the corresponding edge data based on the value of pair_unique."}
+{"id": "TEST1-125", "input_field": "Where can I find the features of TuGraph Explorer now?"}
+{"id": "TEST1-126", "input_field": "What is the primary method used for computation during the execution of the SybilRank algorithm?"}
+{"id": "TEST1-127", "input_field": "What is the role of node and edge attributes in knowledge graphs?"}
+{"id": "TEST1-128", "input_field": "In the TuGraph project, why is it necessary to submit an issue before submitting code?"}
+{"id": "TEST1-129", "input_field": "Could you please explain the differences between the community version and the enterprise version?"}
+{"id": "TEST1-130", "input_field": "What is the output of the bfs_standalone program?"}
+{"id": "TEST1-131", "input_field": "When `key_start` and `key_end` are equivalent to `v`, how does the `VertexIndexIterator` work?"}
+{"id": "TEST1-132", "input_field": "How should vertex data be written into a graph database?"}
+{"id": "TEST1-133", "input_field": "What is the role of `lgraph_api::Transaction`?"}
+{"id": "TEST1-134", "input_field": "What exception will be thrown if a runtime error occurs during the execution of the `ProcessVertexActive` function?"}
+{"id": "TEST1-135", "input_field": "What is the format of the returned result if the json_format parameter is set to false when calling a stored procedure?"}
+{"id": "TEST1-136", "input_field": "What is the address of Prometheus?"}
+{"id": "TEST1-137", "input_field": "What type of tasks is the TuGraph graph analysis engine primarily designed for?"}
+{"id": "TEST1-138", "input_field": "In the given XML configuration, if the table's attribute field name is `id`, how should the `node_id` field be handled to avoid errors?"}
+{"id": "TEST1-139", "input_field": "In the code example for creating nodes and edges using OGM, which part of the code is used to create the edge label \"DIRECT\"?"}
+{"id": "TEST1-140", "input_field": "The data structures of `return n` and `return p.name, p.age` are inconsistent. Can we unify the return structure for the visualization page?"}
+{"id": "TEST1-141", "input_field": "How to configure CMake for ARM-based machines (such as Mac M1) when compiling TuGraph?"}
+{"id": "TEST1-142", "input_field": "What is the configuration of the standalone machine like?"}
+{"id": "TEST1-143", "input_field": "How to query a route between two points?"}
+{"id": "TEST1-144", "input_field": "Does Tugraph support modifying the schema through Cypher or Python?"}
+{"id": "TEST1-145", "input_field": "Which framework does TuGraph-Restful-Server use to support its HTTP protocol, and what are the main functions it provides?"}
+{"id": "TEST1-146", "input_field": "What happens to users who have the role after it is disabled?"}
+{"id": "TEST1-147", "input_field": "If you are an employee of the company submitting contributed content, how should you ensure legal authorization?"}
+{"id": "TEST1-148", "input_field": "How to Clear Data While Retaining the Schema?"}
+{"id": "TEST1-149", "input_field": "In what aspects is OGM similar to MyBatis?"}
+{"id": "TEST1-150", "input_field": "Does BROWSER have a Docker deployment?"}
+{"id": "TEST1-151", "input_field": "Does TuGraph-DB have a data import tool? Where can I find the relevant code?"}
+{"id": "TEST1-152", "input_field": "What are the unique advantages of graph databases compared to relational databases?"}
+{"id": "TEST1-153", "input_field": "In the TuGraph product architecture, which programming languages does the client SDK support?"}
+{"id": "TEST1-154", "input_field": "What are the standard representation formats for spatial data defined by OGC?"}
+{"id": "TEST1-155", "input_field": "What is the purpose of the `db.importor.dataImportor` function?"}
+{"id": "TEST1-156", "input_field": "What is TuGraph Enterprise Edition?"}
+{"id": "TEST1-157", "input_field": "When requesting a list of stored procedures, which HTTP method and URI should be used?"}
+{"id": "TEST1-158", "input_field": "What algorithms are included in the TuGraph basic algorithm package?"}
+{"id": "TEST1-159", "input_field": "What is the default port number for a REST server?"}
+{"id": "TEST1-160", "input_field": "To disable a character, which function should be called, and under what circumstances does this function return true?"}
+{"id": "TEST1-161", "input_field": "Will the data in the original database be lost after updating TuGraph?"}
+{"id": "TEST1-162", "input_field": "If the node does not contain the attribute \"belt\", what value should be returned?"}
+{"id": "TEST1-163", "input_field": "When is a disk I/O alert triggered?"}
+{"id": "TEST1-164", "input_field": "What is the state of the InEdgeIterator after the Close() function is called?"}
+{"id": "TEST1-165", "input_field": "\"DUAL_DIRECTION\" indicates a feature or property that functions or operates in two directions. This term is commonly used in contexts such as data transfer, communication channels, or mechanical systems where bidirectional operation is a key aspect."}
+{"id": "TEST1-166", "input_field": "When the specified vertex ID does not exist and the `nearest` parameter is set to true, how will the `Goto` function handle it?"}
+{"id": "TEST1-167", "input_field": "In the BFS algorithm, what is the final result that is returned?"}
+{"id": "TEST1-168", "input_field": "What is the default setting for \"refresh_time\" in TuGraph?"}
+{"id": "TEST1-169", "input_field": "In the GetEdgeProp command, if you want to find the edge properties for a specific timestamp, how should the timestamp field be specified?"}
+{"id": "TEST1-170", "input_field": "What is the default port number when using TuGraph Browser?"}
+{"id": "TEST1-171", "input_field": "Does TuGraph-DB support running graph algorithms? Are there any example graph algorithms available for reference?"}
+{"id": "TEST1-172", "input_field": "What are the key components and functionalities of Python's stored procedure interface?"}
+{"id": "TEST1-173", "input_field": "When the `CallGql` function is executed, what does it return in case of success and failure, respectively?"}
+{"id": "TEST1-174", "input_field": "How are complex graph analysis operations executed in TuGraph?"}
+{"id": "TEST1-175", "input_field": "What is the primary function of the `filter_output_default` function?"}
+{"id": "TEST1-176", "input_field": "When running in the Java runtime, how should the `targetProject` in the MyBatis Generator XML configuration file be configured?"}
+{"id": "TEST1-177", "input_field": "In the given code, what database field name is specified by the `@Property(\"class\")` annotation?"}
+{"id": "TEST1-178", "input_field": "Can duplicate relationships in a graph be deleted using Cypher statements in TuGraph?"}
+{"id": "TEST1-179", "input_field": "How is the time for the first snapshot set by default?"}
+{"id": "TEST1-180", "input_field": "If you want to submit non-original works to Ant Group, what information do you need to label?"}
+{"id": "TEST1-181", "input_field": "After importing point data on the web end, different query methods yield different results."}
+{"id": "TEST1-182", "input_field": "What does Object-Graph Mapping (OGM) support?"}
+{"id": "TEST1-183", "input_field": "How to instantiate a `liblgraph_client_python.client` object in single-node mode?"}
+{"id": "TEST1-184", "input_field": "What exception is thrown if an invalid role name is passed to the `GetRoleInfo` function?"}
+{"id": "TEST1-185", "input_field": "What are the deployment methods for TuGraph?"}
+{"id": "TEST1-186", "input_field": "Based on the query results using MATCH and SKIP statements, what is the name of the first character returned after skipping the first row?"}
+{"id": "TEST1-187", "input_field": "When importing data, if the operation fails, can the import continue?"}
+{"id": "TEST1-188", "input_field": "If you do not define the table headers and initialize the table with an empty Result(), what method should you use to set the headers for the table next?"}
+{"id": "TEST1-189", "input_field": "What is the primary purpose of the Individual Contributor License Agreement (ICLA) for Ant Group?"}
+{"id": "TEST1-190", "input_field": "What features are not included in the TuGraph Mini Runtime Image?"}
+{"id": "TEST1-191", "input_field": "Which auxiliary functions are primarily used in the Procedure and Embed introduced in the OlapOnDB API documentation?"}
+{"id": "TEST1-192", "input_field": "What exceptions might be thrown when attempting to set a new password for a user?"}
+{"id": "TEST1-193", "input_field": "How to create a new user account using the `liblgraph_python_api.Galaxy` class?"}
+{"id": "TEST1-194", "input_field": "Which method of `liblgraph_python_api.GraphDB` can be used to delete a vertex label?"}
+{"id": "TEST1-195", "input_field": "What permissions will the user retain after the role is disabled?"}
+{"id": "TEST1-196", "input_field": "What software is primarily used for the visualization monitoring of TuGraph?"}
+{"id": "TEST1-197", "input_field": "In which file does the TuGraph service read its configuration?"}
+{"id": "TEST1-198", "input_field": "What is the timeout setting in milliseconds for the `selectVertex` method in the `StudentMapper` interface?"}
+{"id": "TEST1-199", "input_field": "What types of filter functions can be used for expanding the current frontier in the PathTraversal class?"}
+{"id": "TEST1-200", "input_field": "What exception is thrown when a function is called in a read-only transaction?"}
+{"id": "TEST1-201", "input_field": "In the support for UDFs, if the language of the developed function is Python, where are the modules usually placed?"}
+{"id": "TEST1-202", "input_field": "In the text, which resource name has its color set to a fixed \"light-orange\"?"}
+{"id": "TEST1-203", "input_field": "How to Delete Data Imported from a Library"}
+{"id": "TEST1-204", "input_field": "When using TuGraph to create edges in bulk, what content will be returned in the response if the request is successful?"}
+{"id": "TEST1-205", "input_field": "Why does TuGraph choose to use a B+ Tree as its underlying data storage structure?"}
+{"id": "TEST1-206", "input_field": "What parameter settings does the interface \"CallProcedureToLeader\" support to change the format of the return results?"}
+{"id": "TEST1-207", "input_field": "How to Improve Query Efficiency?"}
+{"id": "TEST1-208", "input_field": "Under what circumstances will the `integer()` method in the `FieldData` class throw a `std::bad_cast` exception?"}
+{"id": "TEST1-209", "input_field": "Does the storage engine of TuGraph-DB use a key-value (KV) database? If so, which KV database is it built upon?"}
+{"id": "TEST1-210", "input_field": "Sure, here is the translation:\n\n\"Could you please tell me why I can't find the new version of browser-resource? How do I switch between the old and new versions of the web?\""}
+{"id": "TEST1-211", "input_field": "Does Tugraph compress graph data when performing large-scale data queries?"}
+{"id": "TEST1-212", "input_field": "Which tree structure does TuGraph choose as its data storage structure, and what are the main reasons for choosing this structure?"}
+{"id": "TEST1-213", "input_field": "What version of the Boost library is used by TuGraph-DB?"}
+{"id": "TEST1-214", "input_field": "Who is TuGraph suitable for?"}
+{"id": "TEST1-215", "input_field": "In the REST API of TuGraph, what is the primary use of POST requests?"}
+{"id": "TEST1-216", "input_field": "What are the minimum and recommended external memory configurations for installing and deploying TuGraph?"}
+{"id": "TEST1-217", "input_field": "When creating a TuGraph database, how does the constructor handle the situation if the specified directory does not exist?"}
+{"id": "TEST1-218", "input_field": "What is the default value of the `n_limit` parameter in the `GetNumOutEdges` method of `VertexIterator`?"}
+{"id": "TEST1-219", "input_field": "What is the default number of seconds a node waits when attempting to join a high-availability cluster?"}
+{"id": "TEST1-220", "input_field": "When generating a Mapper interface, how will the XMLMAPPER type implement the interface methods?"}
+{"id": "TEST1-221", "input_field": "What are the main components of a GCN model?"}
+{"id": "TEST1-222", "input_field": "What framework is used for the unit tests of TuGraph-DB?"}
+{"id": "TEST1-223", "input_field": "Can tugraph-db first use Cypher to find a subgraph, and then run graph analysis on this subgraph? For example, PageRank or k-core analysis!"}
+{"id": "TEST1-224", "input_field": "When is the snapshot of an HA cluster deleted?"}
+{"id": "TEST1-225", "input_field": "Which query language does TuGraph-DB currently support, and which query language is planned to be supported in the future?"}
+{"id": "TEST1-226", "input_field": "Sure, here is the translation:\n\n\"Are there any keywords for starting and ending a transaction in the statement?\""}
+{"id": "TEST1-227", "input_field": "How do you use a command to create a new character and provide a description for it?"}
+{"id": "TEST1-228", "input_field": "TuGraph query statements do not support paths of arbitrary length, right?"}
+{"id": "TEST1-229", "input_field": "Sure, here is the translation:\n\nHow should `targetProject` be configured in the XML configuration file when running in the Java runtime?"}
+{"id": "TEST1-230", "input_field": "What roles and tools are supported in the 2024 functionality update plan?"}
+{"id": "TEST1-231", "input_field": "When calling the \"CallGql\" interface, how do you specify the name of the graph to be queried?"}
+{"id": "TEST1-232", "input_field": "Can the attribute values be displayed in the diagram?"}
+{"id": "TEST1-233", "input_field": "How can tugraph-db connect with the Neo4j driver?"}
+{"id": "TEST1-234", "input_field": "In the graph model, certain edges are assigned properties. After importing the data, when attempting to query these edges with properties, it is found that the edge data cannot be retrieved."}
+{"id": "TEST1-235", "input_field": "How to import \"actors.csv\" into TuGraph through the job configuration file in the \"TuGraph-DataX\" project?"}
+{"id": "TEST1-236", "input_field": "What parameters are required when creating a new subgraph?"}
+{"id": "TEST1-237", "input_field": "In the `test_export_default` function, how can you verify that the data re-imported after export is consistent with the original data?"}
+{"id": "TEST1-238", "input_field": "What does the return value of the Work function represent when processing node vi?"}
+{"id": "TEST1-239", "input_field": "Where can I find the features of TuGraph Explorer now?"}
+{"id": "TEST1-240", "input_field": "In the operation of batch creating points, what does TuGraph return if the request is successful?"}
+{"id": "TEST1-241", "input_field": "Can Tugraph support hybrid search, combining vector and knowledge graph?"}
+{"id": "TEST1-242", "input_field": "What is the primary purpose of data preheating in TuGraph?"}
+{"id": "TEST1-243", "input_field": "What information does the `GetSrc` method of the `InEdgeIterator` class return?"}
+{"id": "TEST1-244", "input_field": "What is the role of the optional match clause, OPTIONAL MATCH, in a query?"}
+{"id": "TEST1-245", "input_field": "What are the scenarios where a GraphDB instance cannot be used?"}
+{"id": "TEST1-246", "input_field": "Which library file does TuGraph require to be in the environment variable LD_LIBRARY_PATH for its operation?"}
+{"id": "TEST1-247", "input_field": "How does the GetNumOutEdges function respond when it reaches the limit?"}
+{"id": "TEST1-248", "input_field": "How does the BFS algorithm in the text update the number of active vertices in each iteration?"}
+{"id": "TEST1-249", "input_field": "What is the maximum allowed length in bytes for a character name?"}
+{"id": "TEST1-250", "input_field": "What are the HTTP methods used in URIs for modifying and enabling roles?"}

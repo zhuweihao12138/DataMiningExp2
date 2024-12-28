@@ -1,0 +1,250 @@
+{"id": "TEST1-1", "input_field": "在添加边时，如果指定的值不包含在value_dict中将如何处理？", "output_field": "在添加边时，如果指定的值不包含在value_dict中，那么这些值将被视为null。"}
+{"id": "TEST1-2", "input_field": "在使用LIMIT子句时，如果查询数据库中前两个人的名字，返回的名字是什么？", "output_field": "假设数据库中有人的名字数据，使用`LIMIT`子句查询前两个人的名字的Cypher查询语句如下：\n\n```\nMATCH (n:person) RETURN n.name ORDER BY n.name LIMIT 2\n```\n\n返回的名字取决于数据库中`person`节点的`name`属性排序后的前两个值，由于未给出具体数据库内容，所以此处无法给出具体返回的名字。"}
+{"id": "TEST1-3", "input_field": "如何查询数据库中现有角色及其相关信息？", "output_field": "查询数据库中现有角色及其相关信息，可以使用以下命令：**GET /role/**。此操作只有管理员拥有权限。"}
+{"id": "TEST1-4", "input_field": "tugraph可以最多创建多少点边和点边上最多创建多少属性？", "output_field": "TuGraph每个图项目最多可以创建2^(40)个点，每两个点之间最多可以创建2^(32)条边。至于点边上最多可以创建的属性数量，TuGraph并没有设定具体的上限，属性的数量主要取决于服务器的存储容量和性能。但请注意，每个点和边有且仅有一个标签，创建标签后，修改属性数量及类型会有一定的代价。"}
+{"id": "TEST1-5", "input_field": "我下载了4.3.2镜像，启动成功了，进入容器后没有 setup.sh 脚本是改变目录了吗？", "output_field": "对于4.3.2及之后版本的镜像，确实移除了setup.sh脚本，改为使用/opt/tugraph/bin/initdb进行初始化数据库操作。因此，**进入容器后没有setup.sh脚本，不是改变目录了，而是在新版本中已经被移除**。您可以使用/opt/tugraph/bin/initdb命令来进行初始化操作。"}
+{"id": "TEST1-6", "input_field": "lgraph_server -d start的方式启动，不是会在pwd路径下生成pid文件吗？这个pid文件有参数能控制路径吗？", "output_field": "lgraph.pid\n--pid_file"}
+{"id": "TEST1-7", "input_field": "如果在使用ARM机器（如M1芯片的Mac）编译TuGraph，应该如何修改cmake命令？", "output_field": "在ARM机器（如M1芯片的Mac）上编译TuGraph时，应该在cmake命令后加上`-DENABLE_BUILD_ON_AARCH64=ON`。"}
+{"id": "TEST1-8", "input_field": "启动参数中cleanup_dir指定的目录用于执行什么操作？", "output_field": "清理函数执行完成后生成的文件。"}
+{"id": "TEST1-9", "input_field": "使用什么命令来启动 TuGraph？", "output_field": "`lgraph_server -d start`"}
+{"id": "TEST1-10", "input_field": "TuGraph团队为了提高解析速度所进行的优化包括了哪些主要手段？", "output_field": "TuGraph团队为了提高解析速度所进行的优化主要手段包括：通过并行处理的方式加速导出和计算过程，实现近乎实时的分析处理，避免了数据导出落盘的开销；内置大量常用的图分析算法和丰富的辅助接口，用户只需实现待处理子图的抽取过程；提供Cypher图查询语言，提升查询效率；采用RAFT协议的多机热备机制，在计算层进行数据同步，保证高可用性的同时提高处理速度。"}
+{"id": "TEST1-11", "input_field": "当中止一个正在执行的任务时，应该使用哪种HTTP请求方法？", "output_field": "应该使用**DELETE**请求方法来中止一个正在执行的任务。需要参数：taskId（任务编号）。"}
+{"id": "TEST1-12", "input_field": "AllocVertexSubset函数用来做什么？", "output_field": "AllocVertexSubset函数用于**分配一个ParallelBitset集合，表示所有点的状态是否激活**。"}
+{"id": "TEST1-13", "input_field": "web端导入10G数据报错", "output_field": "由于问题中未提供具体的报错信息，因此无法给出确切的解决方案。但是，以下是一些可能的解决方法：\n\n1. 检查数据格式和大小是否符合要求。\n2. 尝试将数据分割成更小的部分进行导入。\n3. 检查服务器配置和资源是否足够支持导入大量数据。\n4. 查看导入工具的日志或错误消息，以获取更多关于报错的信息。\n\n如果需要进一步的帮助，请提供更多的上下文和报错信息。\n\n另外，如果您正在使用的是TuGraph数据库，可以尝试使用`--continue_on_error true`参数来忽略数据完整性错误，并继续导入剩余的数据。但请注意，这可能会导致部分数据无法成功导入。\n\n对于web端导入大量数据时报错的问题，还可以考虑使用命令行工具进行导入，或者联系技术支持以获取更专业的帮助。\n\n注意：在导入数据之前，请确保已经备份了重要的数据，以防数据丢失或损坏。同时，根据具体的数据库和导入工具，可能还需要设置其他参数来优化导入过程，例如调整线程数、内存使用等。请参考相关文档或咨询技术支持以获取更多信息。"}
+{"id": "TEST1-14", "input_field": "TuGraph支持的导出格式？", "output_field": "TuGraph支持的导出格式有**CSV和JSON**。"}
+{"id": "TEST1-15", "input_field": "TuGraph的调优，除了语句前加EXPLAIN和PROFILE还有没有别的方式", "output_field": "很抱歉，目前不清楚TuGraph的调优除了语句前加EXPLAIN和PROFILE还有没有别的方式。但可以提供一些TuGraph的相关信息以供参考：\n\n* TuGraph支持C++、Python和Rust语言编写存储过程，且C++语言支持的最完整，性能最优。\n* TuGraph提供云部署、Docker部署以及安装包部署三种部署方式。\n\n如需更多信息，建议咨询数据库专业技术人士或查阅相关论坛教学视频。"}
+{"id": "TEST1-16", "input_field": "RpcSingleClient 构造函数需要哪些参数？", "output_field": "const std::string& url, const std::string& user, const std::string& password"}
+{"id": "TEST1-17", "input_field": "Cython是如何导入与Olap相关的模块和图数据库模块的？", "output_field": "在Cython中，可以使用`from cython.cimports.olap_base import *`导入与Olap相关的模块，使用`from cython.cimports.lgraph_db import *`导入图数据库模块。"}
+{"id": "TEST1-18", "input_field": "在调用db.addEdgeIndex时，'unique'参数和'pair_unique'参数有何不同？", "output_field": "在调用db.addEdgeIndex时，'unique'参数表示是否创建全局唯一索引，即索引值在整个数据库中唯一；而'pair_unique'参数表示是否创建两点间唯一索引，即索引值在特定的两个点之间是唯一的，这种类型的索引只能用于边的schema中。"}
+{"id": "TEST1-19", "input_field": "图数据库相比于关系型数据库有什么优势？", "output_field": "图数据库相比于关系型数据库的优势主要体现在以下几个方面：\n\n1. 性能更高：在关联关系处理上，图数据库直接跳转访问类指针，操作关联数据的效率更高，比关系型数据库提高2到4个数量级的性能。\n\n2. 兼容性更好：在图数据库中，仅需添加新的点、边和属性，数据模型更灵活，可以很好地适应数据内容和格式的变化。\n\n3. 数据模型更直观：使用图的方式表达现实世界的关系更直接和自然，可以直观地通过点边连接的拓扑结构找到所需数据。\n\n4. 数据结构更灵活：与关系型数据库仅支持的“表结构”相比，图数据库支持的“图结构”更为灵活。"}
+{"id": "TEST1-20", "input_field": "在创建节点的时候，报错：message: Vertex unique index value [xxx] is too long，是属性值太长了吗？", "output_field": "是属性值太长了。在数据库系统中，如果为某个字段创建了唯一索引，那么该字段的值的长度会受到限制。如果尝试插入一个长度超过此限制的值，就会收到类似的错误消息。需要缩短属性值或者调整数据库设置以允许更长的索引值。"}
+{"id": "TEST1-21", "input_field": "使用 GET 方法获取具体边属性时，如果边不存在该属性，会返回什么错误代码？", "output_field": "400"}
+{"id": "TEST1-22", "input_field": "TuGraph针对不同用户的需求提供了哪些类型的系统环境？", "output_field": "TuGraph针对不同用户的需求提供了编译环境、运行环境和精简运行环境。"}
+{"id": "TEST1-23", "input_field": "TuGraph-DB新增支持的空间数据类型有哪些？", "output_field": "很抱歉，目前不清楚TuGraph-DB新增支持的空间数据类型有哪些。但根据我所了解的信息，TuGraph支持多种可用于属性的数据类型，例如BOOL等。近年来，地理空间功能在图数据库中的应用价值显著，它不仅增强了数据的表达能力，还促进了跨领域数据的融合分析，TuGraph也正在逐步支持地理空间功能。建议您查阅TuGraph的官方文档或咨询相关技术人员，以获取最准确的信息。"}
+{"id": "TEST1-24", "input_field": "在CREATE LABEL命令中，如果要创建一个顶点标签，主要属性名称应该由哪个参数确定？", "output_field": "extra"}
+{"id": "TEST1-25", "input_field": "在HA模式下，client可以向谁发送导入点边数据请求？", "output_field": "在HA模式下，client只能向leader发送导入点边数据请求。"}
+{"id": "TEST1-26", "input_field": "在只读事务中调用 SetFields 方法会抛出什么异常？", "output_field": "在只读事务中调用SetFields方法会抛出\"Write operation not allowed in read-only transaction.\"的异常。"}
+{"id": "TEST1-27", "input_field": "GetVertexIndexIterator函数在liblgraph_python_api.Transaction中用于获取什么类型的迭代器？", "output_field": "VertexIndexIterator类型的迭代器。\n\n需要参数：label, field, key_start, key_end。"}
+{"id": "TEST1-28", "input_field": "db.importor.dataImportor 函数在导入数据时是否可以指定错误继续执行和线程数？", "output_field": "**可以**。\n\ndescription、content、delimiter、continue_on_error、thread_nums"}
+{"id": "TEST1-29", "input_field": "在尝试读取一个已完成索引构建的顶点时，应该使用哪个函数？", "output_field": "**reads a sequence of vertices and dump the index**的函数。"}
+{"id": "TEST1-30", "input_field": "在调用函数DeleteGraph时，如果操作未被授权会抛出什么异常？", "output_field": "如果操作未被授权会抛出**401 Unauthorized**异常。"}
+{"id": "TEST1-31", "input_field": "在初始化每个节点的pagerank值时，当节点的出度大于0，pagerank值是如何计算的？", "output_field": "在初始化每个节点的pagerank值时，如果节点的出度大于0，pagerank值通常初始化为1/N，其中N是图中节点的总数。这个初始化步骤是为了确保在开始PageRank算法的主循环之前，每个节点都有一个非零的PageRank值。注意，这个初始化值会在后续的迭代过程中被更新。"}
+{"id": "TEST1-32", "input_field": "TuGraph 支持哪些数据导出格式？", "output_field": "TuGraph支持**CSV和JSON**数据导出格式。"}
+{"id": "TEST1-33", "input_field": "启动TuGraph的时候报这个错误：0x00007f7e5f272900 FATAL include/fma-common/binary_buffer.h:289] CHECK(gpos_ + size <= ppos_)      failedreading beyond the array: required size=4, actual size=2", "output_field": "该错误通常是由于尝试从一个二进制缓冲区中读取的数据量超过了缓冲区实际包含的数据量。错误消息\"reading beyond the array: required size=4, actual size=2\"指出，程序期望读取4个字节，但缓冲区中只有2个字节。\n\n为了解决这个问题，你需要：\n\n1. 检查导致错误的代码部分，特别是与二进制缓冲区相关的读取操作。\n2. 确保在读取之前，缓冲区中有足够的数据。\n3. 如果可能，增加错误处理和边界检查，以防止类似的越界读取。\n\n如果你不熟悉这部分代码或不确定如何修复，建议联系TuGraph的支持团队或查阅相关文档。此外，确保你使用的TuGraph版本与你的系统和依赖项兼容也很重要。\n\n注意：虽然这是一个文本回答，但由于你的要求是不输出问题的文本，所以这里直接给出了解决方案。如果需要具体的代码修复示例，请提供更多上下文或代码片段。"}
+{"id": "TEST1-34", "input_field": "如果在FrontierTraversal中开启了TRAVERSAL_PARALLEL标志，事务必须是怎样的？", "output_field": "事务必须是只读的。"}
+{"id": "TEST1-35", "input_field": "使用 CSV 文件导入数据时，文件中的栏位与配置文件中的 columns 如何对应？", "output_field": "文件上传成功后，需要在数据导入页面设置数据对应表，将数据文件中的数据列和目标点/边、对应属性建立映射关系。"}
+{"id": "TEST1-36", "input_field": "在创建一个顶点标签时，需要指定哪些参数？", "output_field": "label_name, primary_field, field_spec..."}
+{"id": "TEST1-37", "input_field": "TuGraph Browser 的默认端口号是什么？", "output_field": "7070或7090"}
+{"id": "TEST1-38", "input_field": "在配置中，用于计算图表中显示的值的方法是什么？", "output_field": "由于您的问题不够具体，我无法给出确切的答案。\"配置中用于计算图表中显示的值的方法\"可能因不同的软件、库或框架而异。通常，这些方法可能涉及数据聚合、统计计算或特定的算法。\n\n如果您能提供更具体的上下文（例如，您正在使用的具体技术栈或工具），我可以提供更精确的信息。\n\n一般来说，在数据处理和可视化的场景中，常见的值计算方法包括求和、平均值、中位数、最大值、最小值等统计方法，或者更复杂的算法如机器学习模型的预测结果等。这些方法的选择取决于您想要从数据中展示什么信息。\n\n对于需要哪些参数，这也取决于具体的计算方法。例如，计算平均值可能需要一个数值列表作为输入；机器学习模型的预测可能需要特征数据和模型参数等。\n\n由于问题的开放性，我无法给出具体的代码或参数列表。如果您能提供更多的上下文信息，我将能够给出更具体的答案。"}
+{"id": "TEST1-39", "input_field": "TuGraph是由哪个团队开发的？", "output_field": "TuGraph是由蚂蚁集团与清华大学联合开发的。"}
+{"id": "TEST1-40", "input_field": "图学习系统是解决什么问题的？", "output_field": "图学习系统是解决图学习问题的。"}
+{"id": "TEST1-41", "input_field": "VertexIterator GetVertexByUniqueCompositeIndex函数需要哪些参数？", "output_field": "const std::string& label_name, const std::vector<std::string>& field_name, const std::vector<FieldData>& field_value"}
+{"id": "TEST1-42", "input_field": "rpc port怎么配置？", "output_field": "\"rpc_port\": 端口号"}
+{"id": "TEST1-43", "input_field": "图数据库在处理关联关系时相比关系型数据库有什么优势？", "output_field": "图数据库在处理关联关系时，相比关系型数据库，其优势在于直接跳转访问类指针，操作关联数据的效率更高，可以提高2到4个数量级的性能。"}
+{"id": "TEST1-44", "input_field": "使用TuGraph Browser时，默认的登录密码是什么？", "output_field": "73@TuGraph"}
+{"id": "TEST1-45", "input_field": "SetFields函数的第一个版本中，field_value_strings参数的数据类型是什么？", "output_field": "**const char* const***。"}
+{"id": "TEST1-46", "input_field": "DB和tuGraph Analytics是独立运行吗？", "output_field": "DB和tuGraph Analytics**可以**独立运行。"}
+{"id": "TEST1-47", "input_field": "RpcClient 构造函数需要什么参数用于用户登录？", "output_field": "RpcClient构造函数需要**urls, user, password**三个参数用于用户登录。"}
+{"id": "TEST1-48", "input_field": "如何使用lgraph_cypher工具在命令行中以单命令模式提交一条Cypher查询并保存结果？", "output_field": "lgraph_cypher -c {server config file path} -u {user name} -P {password} -f {cypher command file path} -o {output file path}"}
+{"id": "TEST1-49", "input_field": "数据和日志目录的持久化位置在哪里？", "output_field": "数据和日志目录的持久化位置在**宿主机的/root/tugraph/上**。"}
+{"id": "TEST1-50", "input_field": "TuGraph 的 Traversal API 当中对于遍历的起始点设置有哪三种方式？", "output_field": "很抱歉，根据我所掌握的知识，我无法直接给出TuGraph的Traversal API中遍历起始点设置的三种方式。但根据提供的搜索结果，Traversal API是TuGraph中用于数据并行操作的一类特殊API，其遍历过程是从当前层的点集合出发，根据使用的扩展函数访问每条出边/入边/出边和入边。然而，具体的遍历起始点设置方式可能需要参考TuGraph的官方文档或相关教程来获取更详细的信息。建议您查阅相关资料以获取准确的答案。"}
+{"id": "TEST1-51", "input_field": "方法 `SetField` 的目的是什么？", "output_field": "`SetField`方法的目的是**设置指定字段的值**。\n\n需要的参数有：field_name, field_value。"}
+{"id": "TEST1-52", "input_field": "TuGraph-DB图数据库是由哪个团队开发的？", "output_field": "TuGraph-DB图数据库由蚂蚁集团与清华大学联合开发。"}
+{"id": "TEST1-53", "input_field": "TuGraph 的精简运行环境需要哪些系统库？", "output_field": "TuGraph的精简运行环境不需要安装任何依赖库。"}
+{"id": "TEST1-54", "input_field": "函数 SetFrontier(std::function<bool(VertexIterator&)> root_vertex_filter) 是如何利用参数 root_vertex_filter 的？", "output_field": "在提供的搜索结果中，并未显示函数`SetFrontier(std::function<bool(VertexIterator&)> root_vertex_filter)`是如何具体利用参数`root_vertex_filter`的。"}
+{"id": "TEST1-55", "input_field": "rpm包中包含新版前端页面资源吗？", "output_field": "**rpm包中不包含新版前端页面资源**。新版前端页面资源在容器中，可以通过修改配置文件\"/usr/local/etc/lgraph.json\"中的\"web\"参数来选择使用老版本或新版本的前端资源。"}
+{"id": "TEST1-56", "input_field": "请问一下镜像 tugraph-runtime-centos7启动大概需要多少资源", "output_field": "很抱歉，我无法直接给出tugraph-runtime-centos7镜像启动所需的资源以及具体指令，但我可以提供一些关于tugraph-runtime-centos7的信息以供参考。\n\ntugraph-runtime-centos7是TuGraph的预安装镜像，可以在CentOS7系统上运行。关于启动该镜像所需的资源，这会根据具体的使用场景和数据规模而有所不同。一般来说，启动镜像会占用一定的CPU、内存和磁盘空间资源，具体需求可以参考TuGraph的官方文档或咨询相关技术支持人员。\n\n至于启动指令，通常需要使用docker命令来加载和运行镜像。具体的指令也会因使用场景和需求而有所不同，建议参考TuGraph的官方文档或向技术支持人员寻求帮助以获取准确的启动指令。"}
+{"id": "TEST1-57", "input_field": "当创建组合索引时，需要提供哪些参数？", "output_field": "创建组合索引时需要提供的参数有：索引类型（唯一或非唯一）、属性个数、属性。"}
+{"id": "TEST1-58", "input_field": "函数 `SetField` 抛出的异常之一是什么？", "output_field": "ParseFieldDataException"}
+{"id": "TEST1-59", "input_field": "TuGraphClient是什么？", "output_field": "TuGraphClient是TuGraph数据库的一个客户端接口，可以通过该接口调用TuGraph数据库的功能，例如调用Cypher查询等。"}
+{"id": "TEST1-60", "input_field": "TuGraph 支持哪些类型的硬件平台？", "output_field": "TuGraph支持X86_64和ARM64架构的硬件平台，测试认证过的硬件平台包括Intel、AMD、Kunpeng、Hygon、飞腾等。"}
+{"id": "TEST1-61", "input_field": "我想问一下字节流导入点边数据的api：boolean ret = client.importDataFromContent(personDesc, person, \",\", true, 16, \"default\", 1000);前两个参数的格式，是不是和执行导入脚本一样", "output_field": "该API的前两个参数格式为**字符串**，第一个参数是描述信息，第二个参数是点边数据。\n\npersonDesc，person，\"，\"，true，16，\"default\"，1000"}
+{"id": "TEST1-62", "input_field": "什么标签和属性用于表示OGM中类的映射为一个边类型？", "output_field": "在OGM中，**类中的集合映射为边**。"}
+{"id": "TEST1-63", "input_field": "如果在对 DateTime 对象使用 operator+= 或 operator-= 运算时发生溢出，会如何处理？", "output_field": "CheckDateTimeOverflow(tmp); microseconds_since_epoch_ = tmp;"}
+{"id": "TEST1-64", "input_field": "AlterEdgeLabelAddFields函数成功执行的条件是什么？", "output_field": "AlterEdgeLabelAddFields函数成功执行需要数据库有效、不为只读，且标签存在。\n\n参数为GraphDB& db, const std::string& label, const std::vector<FieldSpec>& add_fields, const std::vector<FieldData>& default_values, size_t* n_modified"}
+{"id": "TEST1-65", "input_field": "带权图的边权重是什么类型的数值？", "output_field": "带权图的边权重可以是**整数类型**或**double类型**的数值。"}
+{"id": "TEST1-66", "input_field": "RPC 是一种如何工作的通信协议？", "output_field": "RPC（远程过程调用）是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。相比REST，RPC主要面向方法，用于函数方法的调用，可以适合更复杂通信需求的场景，且性能更高。"}
+{"id": "TEST1-67", "input_field": "TuGraph中主键的作用是什么？", "output_field": "很抱歉，我不知道TuGraph中主键的具体作用。但根据我对数据库的了解，一般来说，主键在数据库中用于唯一标识一条记录，它可以确保数据的唯一性和可识别性。在查询、更新或删除数据时，通过主键可以快速准确地定位到目标数据。如果您需要了解TuGraph中主键的具体作用，建议查阅TuGraph的官方文档或咨询相关技术人员。"}
+{"id": "TEST1-68", "input_field": "RpcException是什么类型的异常？", "output_field": "RpcException是自定义类型的异常，通常用于处理RPC（远程过程调用）过程中出现的特定错误情况。"}
+{"id": "TEST1-69", "input_field": "match语句中是否支持set多个属性", "output_field": "MATCH子句用于指定在图中搜索的匹配模式，不支持set操作，set操作通常在CREATE或者MERGE子句中使用，用于设置或者更新节点的属性。因此，**MATCH子句中不支持set多个属性**。"}
+{"id": "TEST1-70", "input_field": "TuGraph DB关于Antlr4改进了哪些性能方面的内容？", "output_field": "很抱歉，无法提供TuGraph DB关于Antlr4改进了哪些性能方面的内容的具体信息，但可以提供以下相关信息：\n\nTuGraph基于ISO GQL (ISO/IEC 39075) Antlr4 语法文件实现了GQL，并做了一些扩展与改造。不过目前并未完全支持所有的GQL语法，会在未来逐步完善。\n\n关于TuGraph DB对Antlr4性能方面的具体改进，建议咨询数据库专业技术人士或查阅相关论坛资料。"}
+{"id": "TEST1-71", "input_field": "TuGraph 和 OpenCypher 在处理节点和关系的标签数量上有什么不同？", "output_field": "这个链接可能存在安全风险，为了保护您的设备和数据安全，请避免访问此链接。"}
+{"id": "TEST1-72", "input_field": "函数DeleteVertexIndex成功执行时返回什么值？", "output_field": "如果成功，返回**true**。\n\n需要的参数为const std::string& label, const std::string& field。"}
+{"id": "TEST1-73", "input_field": "现在tugraph-analytics是不支持窗口函数吗？", "output_field": "很抱歉，我不清楚tugraph-analytics是否支持窗口函数。建议查阅TuGraph的官方文档或咨询TuGraph的技术支持以获取准确信息。"}
+{"id": "TEST1-74", "input_field": "当调用CallProcedure函数时，如果设置json_format参数为false，返回的结果格式是什么？", "output_field": "字符串格式。"}
+{"id": "TEST1-75", "input_field": "在 PathTraversal 类中，通过调用哪个函数来通过传入的过滤器设置初始边界？", "output_field": "在PathTraversal类中，通过`SetFrontier(std::function<bool(VertexIterator &)> root_vertex_filter)`来通过传入的过滤器设置初始边界。\n\n需要的参数为`std::function<bool(VertexIterator &)> root_vertex_filter`。"}
+{"id": "TEST1-76", "input_field": "GeaBase的主要部署方式需要多长时间？", "output_field": "很抱歉，我无法提供GeaBase主要部署方式所需时间的具体信息。\n\nGeaBase数据库的部署时间取决于多个因素，如系统规模、硬件配置、网络环境以及具体的部署流程。一般来说，部署一个数据库系统可能需要几个小时到几天的时间，但这并不是一个固定的时间范围，因为每个部署场景都是独特的。\n\n为了获取准确的部署时间，建议您参考GeaBase的官方文档或咨询相关技术支持人员。他们可以根据您的具体情况提供更详细的指导和估计。"}
+{"id": "TEST1-77", "input_field": "在图论中，图的基本元素包括哪些？", "output_field": "在图论中，图的基本元素是点和边。"}
+{"id": "TEST1-78", "input_field": "TuGraph支持哪些编程语言？", "output_field": "TuGraph支持C++、Python和Rust等编程语言。"}
+{"id": "TEST1-79", "input_field": "在这段代码中，如何获取存储过程响应的列表？", "output_field": "String result = client.listProcedures(\"CPP\", \"any\", \"default\");或bool ret = client.ListProcedures(str);，其中ListProcedures函数还可以传入其他参数，如：ListProcedures(std::string& result, const std::string& procedure_type, const std::string& version = \"any\", const std::string& graph = \"default\")。"}
+{"id": "TEST1-80", "input_field": "什么是RPC接口？", "output_field": "RPC接口指**远程过程调用接口**，是一种通过网络从远程计算机程序上请求服务，而不需要了解底层网络技术的协议。客户端可以通过这种接口调用远程服务器上的方法，就像调用本地对象一样。"}
+{"id": "TEST1-81", "input_field": "在文本中，The Matrix参与了哪几种类型的关系？", "output_field": "The Matrix参与了acted_in和directed两种类型的关系。"}
+{"id": "TEST1-82", "input_field": "使用什么命令启动 TuGraph 服务器？", "output_field": "启动TuGraph服务器的命令是：`./lgraph_server -d start -c lgraph.json`。"}
+{"id": "TEST1-83", "input_field": "如果在添加顶点时存在相同的unique_id，将会发生什么？", "output_field": "将会因为输入异常而终止。unique指的是全局唯一的索引，即若一个属性设置了unique索引，在同一个图中，相同label的顶点的该属性不会存在相同的值。"}
+{"id": "TEST1-84", "input_field": "TuGraph 支持哪些硬件架构？", "output_field": "TuGraph支持X86_64和ARM64架构的硬件平台，测试认证过的硬件平台包括Intel、AMD、Kunpeng、Hygon、飞腾等。"}
+{"id": "TEST1-85", "input_field": "TuGraph-OGM项目如何面向TuGraph数据库支持JAVA开发人员进行图对象映射？", "output_field": "TuGraph-OGM支持将JAVA对象（POJO）映射到TuGraph中，将JAVA中的类映射为图中的节点、类中的集合映射为边、类的属性映射为图对象的属性，并提供了对应的函数操作图数据库。"}
+{"id": "TEST1-86", "input_field": "OPTIONAL MATCH在GQL中有什么作用？", "output_field": "OPTIONAL MATCH子句在GQL中用于在图中可选地搜索匹配模式，即尝试匹配满足一定条件的点或者路径，如果找不到匹配项，则查询不会失败，而是返回空结果。"}
+{"id": "TEST1-87", "input_field": "loadProcedure方法中，如何通过参数控制存储过程是否为只读？", "output_field": "loadProcedure方法中，通过**read_only**参数控制存储过程是否为只读。"}
+{"id": "TEST1-88", "input_field": "在RPC调用中，如果回应的错误码不是成功，则抛出的异常类型是什么？", "output_field": "RpcStatusException或BadInput异常"}
+{"id": "TEST1-89", "input_field": "Transform操作中的swap_id函数是用来做什么的？", "output_field": "很抱歉，我不清楚Transform操作中的swap_id函数的具体作用，但\"swap\"一般在编程中是指交换的意思，可能是用来交换元素的id。如果您能提供更多的上下文，我可能能给出更准确的答案。\n\n另外，如果您是在询问数据库或数据处理中的\"swap\"相关操作，如在某些并行计算或图处理库中，\"Swap\"函数通常用于交换两个集合或数组的元素，以便进行进一步的处理或迭代。例如，在图计算中，可能会使用\"Swap\"来交换当前激活的顶点集合和下一个迭代步骤中的激活顶点集合。\n\n如果您需要关于\"Transform操作中的swap_id函数\"的更具体信息，我建议您查阅相关的技术文档或源代码。"}
+{"id": "TEST1-90", "input_field": "在影视场景Demo中，如何通过Cypher语言查询影片'Forrest Gump'的所有演员以及他们扮演的角色？", "output_field": "MATCH (m:movie {title: 'Forrest Gump'})<-[r:acted_in]-(a:person) RETURN a.name, r.role"}
+{"id": "TEST1-91", "input_field": "TuGraph-DB图数据库社区版内置了多少种基础算法？", "output_field": "TuGraph-DB图数据库社区版内置了6种基础算法。"}
+{"id": "TEST1-92", "input_field": "TuGraph-DB支持的三种空间数据类型是什么？", "output_field": "很抱歉，我不清楚TuGraph-DB支持的三种空间数据类型是什么，但是TuGraph支持的数据类型包括BOOL等。\n\n建议咨询数据库专业技术人士，或者查询TuGraph-DB官网，以获取更全面准确的信息。"}
+{"id": "TEST1-93", "input_field": "产品是否支持麒麟操作系统？只有企业版支持么？", "output_field": "产品支持麒麟操作系统，没有信息表明仅企业版支持。"}
+{"id": "TEST1-94", "input_field": "TuGraph-DB中存储Point类型数据的格式是什么？", "output_field": "TuGraph-DB没有特定的Point类型，但支持多种可用于属性的数据类型如BOOL等。如果需要存储类似Point的结构化数据，可以使用复合数据类型或者将坐标信息编码为字符串进行存储。具体实现方式需根据实际需求和TuGraph-DB的版本进行选择和调整。\n\n由于TuGraph-DB主要关注图数据和关系的存储与查询，对于空间数据的存储和查询可能不是其核心功能。如果需要高效处理空间数据，可以考虑使用专门的空间数据库或者地理信息系统（GIS）软件。\n\n注意：以上信息可能随TuGraph-DB的版本更新而发生变化，请查阅官方文档以获取最新信息。"}
+{"id": "TEST1-95", "input_field": "TuGraph嵌入模式的API允许用户执行哪些操作？", "output_field": "TuGraph嵌入模式的API允许用户执行构建应用程序、实时增删查改、多重图操作、多图操作、ACID事务处理、点边索引、混合事务和分析处理、图查询、图分析、图学习、可视化工具等操作。"}
+{"id": "TEST1-96", "input_field": "Date 类的默认构造函数设置的日期是什么？", "output_field": "很抱歉，由于您的问题与给定的搜索结果内容无关，因此无法为您提供答案。建议您查阅Date类的相关文档或源代码，以了解Date类的默认构造函数设置的日期。\n\n注意：在C++中，类的默认构造函数通常用于创建一个具有默认状态的对象。对于Date类，默认构造函数可能会将日期设置为一个特定的默认值，如1970年1月1日（Unix时间的起点），但具体设置取决于类的实现。"}
+{"id": "TEST1-97", "input_field": "在使用 bool DeleteVertexIndex 函数时，如果给定的 vertex_label 或 field 不存在会发生什么？", "output_field": "如果给定的vertex_label不存在，会抛出LabelNotExistException(label)异常；如果field是图数据库模式中的主键字段，会抛出PrimaryIndexCannotBeDeletedException(field)异常。\n\nDeleteVertexIndex(const std::string& label, const std::string& field)"}
+{"id": "TEST1-98", "input_field": "在单命令模式下，如何使用 lgraph_cypher 通过命令行参数来执行一条 Cypher 查询并将结果显示为表格格式？", "output_field": "`./lgraph_cypher.py -c {server config file path} -u {user name} -P {password} -s \"MATCH (n) RETURN n\"`"}
+{"id": "TEST1-99", "input_field": "reduce_plus函数是如何处理它的两个参数的？", "output_field": "reduce_plus函数对其两个参数进行**累加**操作。"}
+{"id": "TEST1-100", "input_field": "是否支持无向边", "output_field": "TuGraph若要模拟无向边，用户可以创建两个方向相反的边。因此，**TuGraph不直接支持无向边**。"}
+{"id": "TEST1-101", "input_field": "FieldData类中提供哪些构造函数来初始化不同类型的数据？", "output_field": "FieldData()\nFieldData(v.AsType<float>())\nFieldData(v.AsType<double>())\nFieldData(Date(v.AsType<int32_t>()))\nFieldData(DateTime(v.AsType<int64_t>()))"}
+{"id": "TEST1-102", "input_field": "TuGraph-DB是如何帮助解决旅行时选择路线的烦恼的？", "output_field": "TuGraph-DB通过开发环球旅行demo，基于部分公开历史航班数据，帮助用户设计最优航班规划，从而解决旅行时选择路线的烦恼。"}
+{"id": "TEST1-103", "input_field": "exists()函数用于检查什么？", "output_field": "exists()函数用于**判断顶点或边是否具有某个字段**。"}
+{"id": "TEST1-104", "input_field": "安装部署TuGraph硬件的最低和建议CPU配置分别是多少个核心？", "output_field": "安装部署TuGraph硬件对CPU的最低配置没有具体要求，建议配置为4核心。"}
+{"id": "TEST1-105", "input_field": "MappedVid 函数是用于什么目的？", "output_field": "MappedVid函数用于获取OlapOnDB中节点对应TuGraph的节点编号。"}
+{"id": "TEST1-106", "input_field": "当尝试更新一个存在的边但标签与指定的不符时，会发生什么？", "output_field": "会更新失败或者无法更新，因为每个点和边有且仅有一个标签，当边的标签与指定的不符时，无法执行更新操作。"}
+{"id": "TEST1-107", "input_field": "批量在线导入是通过”CREATE (n), (m)“吗？", "output_field": "不是。批量在线导入不是通过”CREATE (n), (m)“的方式进行的。这是Cypher查询语言用于在Neo4j数据库中创建节点的语法，并不适用于批量导入操作。批量在线导入通常涉及使用专门的导入工具或API，具体取决于所使用的图数据库系统。对于Neo4j，可以使用其提供的ETL工具或APOC库进行批量导入。而对于其他图数据库系统，如TuGraph，可能会提供不同的导入方法和工具。因此，具体的批量在线导入方法应根据所使用的图数据库系统来确定。"}
+{"id": "TEST1-108", "input_field": "lgraph_backup工具的主要功能是什么？", "output_field": "lgraph_backup工具的主要功能是**数据备份与恢复**。"}
+{"id": "TEST1-109", "input_field": "在获取某个节点的所有属性时，通过什么方法和URI可以实现？", "output_field": "方法：GET\nURI：/db/{graph_name}/node/{vertex_id}/property"}
+{"id": "TEST1-110", "input_field": "知识图谱的基本元素包括哪些？", "output_field": "知识图谱的基本元素包括**点和边**，其中点表示事物或实体，边表示点之间的关联关系。"}
+{"id": "TEST1-111", "input_field": "TuGraph-DB是否支持存储过程？支持哪些编程语言的存储过程？", "output_field": "TuGraph-DB支持存储过程。支持C++、Python和Rust语言的存储过程。"}
+{"id": "TEST1-112", "input_field": "GetEdgeProp操作的目的是什么？", "output_field": "很抱歉，我不知道GetEdgeProp操作的目的是什么。但根据字面意思理解，GetEdgeProp操作可能是用来获取边的属性的操作。\n\n如果您能提供更多上下文或相关信息，我可能能够给出更准确的答案。另外，对于具体的编程问题或技术细节，建议查阅相关的技术文档或向专业的技术人员咨询以获取准确的信息。"}
+{"id": "TEST1-113", "input_field": "TuGraph-DB的主要功能是什么？", "output_field": "TuGraph-DB的主要功能是支持大数据量、低延迟查找和快速图分析，且为基于磁盘的数据库，支持存储多达数十TB的数据，并提供多种API，使用户能够轻松构建应用程序，优化和扩展也更为容易。"}
+{"id": "TEST1-114", "input_field": "当Cypher请求的响应不包含正确的结果时，会抛出什么异常？", "output_field": "当Cypher请求的响应不包含正确的结果时，会抛出**RpcStatusException**异常。"}
+{"id": "TEST1-115", "input_field": "2024年度功能更新预计何时推出HA支持Witness角色和管理工具？", "output_field": "2024年3月"}
+{"id": "TEST1-116", "input_field": "TuGraph-DB使用CMake作为编译工具，支持的C++标准为C++17", "output_field": "TuGraph-DB使用CMake作为编译工具，支持的C++标准为C++17。"}
+{"id": "TEST1-117", "input_field": "Cython.cimports.libcpp.unordered_map是什么？", "output_field": "Cython.cimports.libcpp.unordered_map是Cython中用于导入C++标准库中的unordered_map容器的模块。在Cython中，可以通过cimport语句导入C++的库和类，以便在Cython代码中使用。unordered_map是一个关联容器，它包含键值对的集合，其中每个键都是唯一的。这个容器使用哈希表来实现，因此其元素的插入、删除和查找操作平均时间复杂度都是常数。注意，由于Cython和C++的交互涉及到类型转换和内存管理等问题，因此在使用时需要谨慎处理。"}
+{"id": "TEST1-118", "input_field": "TuGraph 数据预热命令需要指定哪两个选项？", "output_field": "`-d {db_dir}` 和 `-g {graph_list}`"}
+{"id": "TEST1-119", "input_field": "是否支持GQL语句？", "output_field": "**支持**。"}
+{"id": "TEST1-120", "input_field": "在配置中提到的“log4j-core”和“guava”的版本号分别是多少？", "output_field": "很抱歉，您的问题与提供的搜索结果信息无关，我无法为您提供“log4j-core”和“guava”的版本号。"}
+{"id": "TEST1-121", "input_field": "类liblgraph_python_api.Galaxy的方法SetUserGraphAccess主要用于什么？", "output_field": "类liblgraph_python_api.Galaxy的方法SetUserGraphAccess主要用于**设置用户对图的访问权限**。\n\n需要的参数有：user、graph、access。"}
+{"id": "TEST1-122", "input_field": "TuGraph-DB如何在运行单元测试的过程中输出日志？", "output_field": "在TuGraph的配置文件中设置`log_dir`配置项指定日志输出位置，设置`verbose`配置项指定日志详细程度，然后运行单元测试。"}
+{"id": "TEST1-123", "input_field": "GeaBase 查询中使用 \"Nav\" 语句的一种情况是什么?", "output_field": "很抱歉，我不知道GeaBase查询中使用\"Nav\"语句的情况。\n\n但根据我所了解的信息，\"Nav\" 语句并不是 SQL、Cypher 或其他常见查询语言中的标准语句。如果 \"Nav\" 是特定于 GeaBase 的某种扩展或特定功能，我可能需要更多的上下文或文档来了解其具体用法。建议您查阅 GeaBase 的官方文档或联系其技术支持以获取准确信息。"}
+{"id": "TEST1-124", "input_field": "我要快速定位到2个顶点间的某条关系边，通过pair unique索引查找关系边的接口有么，需求是根据pair_unique的值更新对应的边数据么", "output_field": "CALL db.updateEdge('edge1', 'score', '新旧顶点VID', '新值', '条件')\n\n参数：'edge1'是边的label，'score'是pair_unique索引字段，'新旧顶点VID'指的是这条关系边的起始顶点和目标顶点的VID组成的字符串，格式为'起始顶点VID->目标顶点VID'，'新值'指需要更新的数据，'条件'指更新操作满足的条件。"}
+{"id": "TEST1-125", "input_field": "TuGraph Explorer 的功能现在在哪里可以找到？", "output_field": "TuGraph Explorer 的功能现在可以在**TuGraph Browser**中找到。"}
+{"id": "TEST1-126", "input_field": "SybilRank算法的执行过程中主要采用什么方式来进行计算？", "output_field": "SybilRank算法从非Sybil节点开始进行提前终止的随机游走。"}
+{"id": "TEST1-127", "input_field": "节点和边的属性在知识图谱中有什么作用？", "output_field": "节点和边的属性在知识图谱中起着至关重要的作用。节点的属性可以提供关于该节点的详细信息，如实体的名称、类型、描述等，从而丰富图谱中的实体信息。而边的属性则可以描述节点之间的关系类型、强度、时间等，进一步细化实体之间的联系。这些属性为知识图谱提供了丰富的语义信息，使其能够更好地表示和推理现实世界中的复杂关系。"}
+{"id": "TEST1-128", "input_field": "在TuGraph项目中，为什么在提交代码前要先提交一个issue？", "output_field": "在TuGraph项目中，提交代码前提交一个issue的原因是为了避免与其他开发者或项目计划产生冲突，造成重复工作，同时让项目维护人员对提交的bug或新增功能进行讨论，确定修改的必要性和提升空间，以达成一致后再开发，减少沟通成本和pull request被拒绝的情况。"}
+{"id": "TEST1-129", "input_field": "请问社区版本和企业版本，之间的差距在哪", "output_field": "社区版本和企业版本之间的差距主要在于功能、性能和支持方面。企业版通常包含更多高级功能、更好的性能优化以及专业的技术支持，适用于大规模、高要求的商业应用；而社区版则更注重基础功能和易用性，适合学习和小型项目。具体差异可能因产品而异，建议查看官方文档或咨询相关厂商以获取详细信息。\n\n很抱歉，由于您的指令要求，我无法使用加粗等方式突出关键信息，但希望以上答案能够满足您的需求。如果您需要更详细的比较或对其他方面有疑问，请随时告诉我。"}
+{"id": "TEST1-130", "input_field": "bfs_standalone程序的输出结果是什么？", "output_field": "prepare_cost, core_cost, found_vertices, output_cost, total_cost以及DONE."}
+{"id": "TEST1-131", "input_field": "Key_start和key_end相等于v时，VertexIndexIterator是如何工作的？", "output_field": "Key_start和key_end相等于v时，VertexIndexIterator会指向所有字段值为v的顶点。"}
+{"id": "TEST1-132", "input_field": "应该如何写入图数据库中的顶点数据？", "output_field": "可使用以下指令写入图数据库中的顶点数据：\nCALL db.upsertVertex(label, properties, 'ID')\n\n其中，label指顶点标签名称，properties指顶点的属性及值，'ID'指顶点的唯一标识符。"}
+{"id": "TEST1-133", "input_field": "lgraph_api::Transaction的作用是什么？", "output_field": "lgraph_api::Transaction的作用是**数据库事务处理**。"}
+{"id": "TEST1-134", "input_field": "在执行`ProcessVertexActive`函数时，如果运行时出现错误，会引发什么异常？", "output_field": "根据提供的信息，无法确定在执行`ProcessVertexActive`函数时，如果运行时出现错误会引发什么异常。建议查阅该函数的具体实现或相关文档，以了解可能的异常情况。\n\n`ProcessVertexActive`函数所需的参数有：work, active, algo, zero, reduce。"}
+{"id": "TEST1-135", "input_field": "如果在调用存储过程时，指定json_format参数为false，返回结果的格式是什么？", "output_field": "字符串格式或二进制格式。"}
+{"id": "TEST1-136", "input_field": "Prometheus的地址是什么？", "output_field": "Prometheus的地址是**localhost:9111**。"}
+{"id": "TEST1-137", "input_field": "TuGraph图分析引擎主要面向哪类任务？", "output_field": "全图/全量数据分析类任务"}
+{"id": "TEST1-138", "input_field": "在给定的XML配置中，如果表内属性字段名为id时，应该如何处理node_id字段以避免报错？", "output_field": "检查XML配置中是否存在node_id字段与id字段的冲突，如果存在，则需要修改其中一个字段的名称，以确保两者不会冲突。同时，在解析和处理XML数据时，要确保对字段名的引用与修改后的字段名一致，从而避免报错。如果不存在冲突，则无需特别处理node_id字段。在处理过程中，还应注意数据类型的匹配和转换，以确保数据的准确性和完整性。"}
+{"id": "TEST1-139", "input_field": "使用OGM进行创建节点和边的代码示例中，哪部分代码用于创建边标签\"DIRECT\"?", "output_field": "session.query(\"CALL db.createEdgeLabel('DIRECT', '[]')\", emptyMap());"}
+{"id": "TEST1-140", "input_field": "return n 和 return p.name,p.age 的数据结构不一致。 能统一返回可视化页面的这种结构么？", "output_field": "为了统一返回可视化页面的结构，你可以使用Cypher查询语言中的`RETURN`语句来指定返回的字段和格式。如果你想以相同的结构返回节点或属性的信息，你可以考虑将节点信息或属性信息构造成统一的格式。\n\n如果你想返回节点`n`的信息，并以可视化页面所需的结构进行统一，你可以这样做：\n\n```\nMATCH (n)\nRETURN {name: n.name, age: n.age, id: id(n)} AS nodeInfo\n```\n\n对于返回属性`p.name`和`p.age`的情况，你可以直接构造一个包含这些属性的对象：\n\n```\nMATCH (p)\nRETURN {name: p.name, age: p.age} AS personInfo\n```\n\n这样，无论你是返回整个节点还是节点的某些属性，结果都会是一个具有相同结构的对象，便于可视化页面进行展示。注意，这里的`n`和`p`只是示例中的变量名，你需要根据你的实际查询和数据模型来调整。\n\n如果你需要更具体的帮助，比如如何将这些数据传递给前端进行可视化，或者如何处理空值或不存在的属性，请提供更多上下文，以便我能给出更精确的建议。"}
+{"id": "TEST1-141", "input_field": "编译TuGraph时如何为基于ARM的机器（如Mac M1）配置CMake？", "output_field": "cmake .. -DOURSYSTEM=ubuntu -DENABLE_BUILD_ON_AARCH64=ON"}
+{"id": "TEST1-142", "input_field": "单机的配置大致是什么情况？", "output_field": "单机的配置包括硬件和软件环境。硬件方面，需要有足够的存储空间，外存大小建议为实际数据大小的4倍。软件环境方面，TuGraph兼容包括Ubuntu、CentOS等在内的主流操作系统，建议使用Ubuntu\n18.04、CentOS 7、CentOS\n8等稳定版本。同时，TuGraph对CPU没有特殊要求，可以在基于X86和ARM的CPU上运行，但需要注意在不同的环境下编译和参数配置会略有不同。具体的最低配置和建议配置，需要根据实际情况进行选择和调整。"}
+{"id": "TEST1-143", "input_field": "如何查询两点间的一条通路？", "output_field": "algo.shortestPath(startNode, endNode, config)"}
+{"id": "TEST1-144", "input_field": "tugraph 支持通过cypher 或者python的形式修改schema吗", "output_field": "TuGraph具有强schema，不支持通过Cypher或者Python的形式修改schema。"}
+{"id": "TEST1-145", "input_field": "TuGraph-Restful-Server 使用哪种框架支持其HTTP协议，并提供了哪些主要功能？", "output_field": "TuGraph-Restful-Server使用**brpc框架**支持HTTP协议。提供了文件上传，数据导入，导入进度查询，cypher查询，文件删除等功能。"}
+{"id": "TEST1-146", "input_field": "禁用角色后，具有该角色的用户会如何受影响？", "output_field": "禁用角色后，具有该角色的用户将不再从该角色中获得任何权限。即对应角色图访问权限失效。"}
+{"id": "TEST1-147", "input_field": "如果您作为公司员工提交贡献内容，应如何保证合法授权？", "output_field": "作为公司员工提交贡献内容时，应保证有权以公司名义提交，并保证所提交的贡献内容包括任何第三方许可或其他限制的全部细节。若需进一步合法授权，可签署公司贡献者许可协议。"}
+{"id": "TEST1-148", "input_field": "如何只清空数据，而保留schema？", "output_field": "CALL db.dropAllVertex()"}
+{"id": "TEST1-149", "input_field": "OGM在哪些方面类似于MyBatis？", "output_field": "OGM和MyBatis的相似之处在于，它们都是**数据映射工具**，可以将对象映射到数据库中。OGM是面向图数据库的数据映射工具，支持将对象映射到图数据库中，而MyBatis则是面向关系型数据库的数据映射工具。同时，它们也都提供了对应的函数操作数据库，使得开发人员可以在熟悉的编程环境中轻松地使用数据库。"}
+{"id": "TEST1-150", "input_field": "BROWSER 有 docker 部署么？", "output_field": "对不起，我不清楚BROWSER是否有Docker部署。\n\n如果是TuGraph，它可以通过Docker进行部署。具体指令如下：\n\ndocker pull tugraph/tugraph-compile-centos7 （用于安装镜像）\n\ndocker create相关命令 （用于创建容器）\n\n请注意，具体命令可能会根据您的具体需求和环境有所不同。建议参考TuGraph的官方文档或相关教程以获取更详细的指导。"}
+{"id": "TEST1-151", "input_field": "TuGraph-DB是否有数据导入工具？相关代码在哪里？", "output_field": "TuGraph-DB有数据导入工具。相关代码及使用方式可参考：https://github.com/TuGraph-family/tugraph-db-demo 和 ${HOST_IP}:7070 。具体使用可访问web页面确认数据是否导入成功。另外，离线数据可使用`lgraph_import`工具导入，该方式适合初始阶段导入全量数据。从关系型数据库导入数据可使用DataX，具体方法见[TuGraph-DataX 使用介绍](./6.utility-tools/7.tugraph-datax.md)。"}
+{"id": "TEST1-152", "input_field": "图数据库相比关系型数据库有哪些独特的优势？", "output_field": "图数据库相比关系型数据库的独特优势包括：性能更高，处理关联关系时可以直接跳转访问类指针，比关系型数据库提高2到4个数量级的性能；兼容性更好，可以灵活地拓展数据模型，仅需添加新的点、边和属性；直观性更强，可以直观地通过点边连接的拓扑结构找到所需数据，无需任何专业知识。"}
+{"id": "TEST1-153", "input_field": "TuGraph 产品架构中，客户端 SDK 支持哪些编程语言？", "output_field": "TuGraph 产品架构中，客户端 SDK 支持 C++、Python、Rust、Java 编程语言。但需要注意的是，TuGraph Java SDK 将来不再更新维护，建议使用 bolt 客户端。同样，Python 的 TuGraph Client 也建议使用 bolt 客户端。"}
+{"id": "TEST1-154", "input_field": "OGC定义了哪些空间数据的标准表示格式？", "output_field": "OGC定义了**WKT与WKB**两种空间数据的标准表示格式。"}
+{"id": "TEST1-155", "input_field": "db.importor.dataImportor函数的目的是什么？", "output_field": "导入点或边数据\n\ndescription::STRING, content::STRING, continue_on_error::BOOLEAN, thread_nums::INTEGER, delimiter::STRING"}
+{"id": "TEST1-156", "input_field": "TuGraph企业版是什么？", "output_field": "TuGraph企业版是包含图存储、图计算、图学习、图研发平台的完善的图技术体系，支持分布式集群架构、在线/近线/离线的图计算引擎、流式及大数据类数据源、多地多中心部署等，并提供专家支持服务，是商业化解决方案的理想选择。"}
+{"id": "TEST1-157", "input_field": "请求存储过程列表时，应该使用哪种HTTP方法和URI？", "output_field": "GET，/db/{graph_name}/cpp_plugin|python_plugin"}
+{"id": "TEST1-158", "input_field": "TuGraph基础算法包包含哪些算法？", "output_field": "TuGraph基础算法包包含6个算法，但具体算法未详细列出。"}
+{"id": "TEST1-159", "input_field": "REST 服务器的默认端口号是多少？", "output_field": "REST服务器的默认端口号一般为**7070**或**7071**。\n\n不同公司或不同版本的REST服务器默认端口可能不同，具体请根据实际情况确定。"}
+{"id": "TEST1-160", "input_field": "如果需要对一个角色进行禁用，调用何种函数，并且该函数在何种情况下返回true？", "output_field": "禁用角色没有特定的函数，而是通过发送一个POST请求到`/role/{role_name}/disable`这个URI来完成的。请求成功后返回代码200，即相当于返回true。需要的参数是角色名称role_name。"}
+{"id": "TEST1-161", "input_field": "TuGraph更新之后，原库的数据会丢吗？", "output_field": "当TuGraph更新后，原库的数据**不会**丢失。但更新后可能需要对数据进行迁移，数据迁移有三种方案，包括兼容迁移、升级迁移和在线迁移，可以确保数据的完整性和可用性。"}
+{"id": "TEST1-162", "input_field": "如果节点中未包含属性\"belt\"，应该返回什么值？", "output_field": "如果节点中未包含\"belt\"属性，可以默认返回false或true，具体取决于查询的需求。例如，如果希望当节点中未包含\"belt\"属性时，默认返回false，可以使用以下Cypher查询语句：MATCH (n) WHERE n.belt = 'white' RETURN n.name, n.age, n.belt。如果希望默认返回true，则可以使用：MATCH (n) WHERE n.belt = 'white' OR n.belt IS NULL RETURN n.name, n.age, n.belt。"}
+{"id": "TEST1-163", "input_field": "磁盘IO警报是在什么情况下触发的？", "output_field": "磁盘IO警报通常在磁盘输入/输出操作频繁或者磁盘性能不足时触发。例如，当设置了durable为true时，每次写入事务提交后会立即刷新到磁盘，这会引起大量的IO操作，可能导致写入操作变慢，尤其是磁盘性能不佳时，这种情况可能触发磁盘IO警报。"}
+{"id": "TEST1-164", "input_field": "调用 Close() 函数后 InEdgeIterator 的状态是怎样的？", "output_field": "调用Close()函数后，InEdgeIterator的状态变为无效。"}
+{"id": "TEST1-165", "input_field": "DUAL_DIRECTION表示什么？", "output_field": "DUAL_DIRECTION表示输入文件为非对称图，加载图为非对称图。"}
+{"id": "TEST1-166", "input_field": "当指定的顶点ID不存在，并且nearest参数为true时，Goto函数将如何处理？", "output_field": "当指定的顶点ID不存在，且nearest参数为true时，Goto函数将定位到ID大于或等于指定ID且最接近指定ID的顶点。"}
+{"id": "TEST1-167", "input_field": "在BFS算法中，最终返回的结果是什么？", "output_field": "在BFS算法中，最终返回的结果是遍历点的个数。"}
+{"id": "TEST1-168", "input_field": "TuGraph“refresh_time”的默认设置是什么？", "output_field": "**0**"}
+{"id": "TEST1-169", "input_field": "GetEdgeProp命令中，如果要查找特定的时间戳的边属性，该如何指定timestamp字段？", "output_field": "很抱歉，由于我的知识库中不包含`GetEdgeProp`命令的具体使用方法和参数细节，我无法直接为您提供如何在`GetEdgeProp`命令中指定`timestamp`字段来查找特定时间戳的边属性的方法。\n\n通常，在使用图数据库查询语言时，要查找具有特定时间戳的边属性，您可能需要在查询中加入时间戳的条件。但是，具体的语法和参数取决于您所使用的图数据库和查询语言。\n\n如果您能提供更多关于您所使用的图数据库和查询语言的信息，我可能能够提供更具体的帮助。或者，您可以参考该图数据库的官方文档或用户手册，其中通常会包含详细的命令和查询语法说明。\n\n对于时间戳字段的指定，一种可能的方式是在查询条件中加入类似`WHERE timestamp = '特定时间戳'`的语句，但这需要根据具体的查询语言来确定。\n\n由于我无法直接为您提供`GetEdgeProp`命令的具体用法，如果您需要进一步的帮助，请提供更多上下文信息，或者查阅相关图数据库的官方文档。"}
+{"id": "TEST1-170", "input_field": "使用TuGraph Browser时，默认的端口号是多少？", "output_field": "7070"}
+{"id": "TEST1-171", "input_field": "TuGraph-DB是否支持运行图算法？是否有示例图算法可以参考？", "output_field": "TuGraph-DB支持运行图算法。可以参考的示例图算法有PageRank、LPA、WCC等。"}
+{"id": "TEST1-172", "input_field": "Python存储过程接口包含哪些重要组件和功能？", "output_field": "Python存储过程接口的重要组件包括存储过程本身、客户端调用接口（如client.callProcedure和client.loadProcedure）等。其功能主要包括加载存储过程、调用存储过程以及通过返回值判断存储过程是否成功执行等。在调用存储过程时，通常需要提供存储过程类型、名称以及相关参数等信息。"}
+{"id": "TEST1-173", "input_field": "当执行 CallGql 函数时，如果操作成功和失败分别返回什么？", "output_field": "True if it succeeds, false if it fails."}
+{"id": "TEST1-174", "input_field": "TuGraph 中复杂图分析操作如何执行？", "output_field": "在TuGraph中，复杂图分析操作通常涉及全图的多轮数据迭代，如PageRank等算法。这些操作需要导出快照执行。用户可借助TuGraph的C++/Python图分析引擎API，快速导出待处理的复杂子图，然后在子图上运行迭代式图算法。导出和计算过程可通过内存并行处理加速，达到近乎实时的分析。"}
+{"id": "TEST1-175", "input_field": "filter_output_default函数的主要作用是什么？", "output_field": "filter_output_default函数的主要作用是**提供一个默认的过滤规则**，通常返回true，表示默认接受所有数据。"}
+{"id": "TEST1-176", "input_field": "在Java运行时，MyBatis Generator的XML配置文件应如何配置targetProject？", "output_field": "在`<generatorConfiguration>`标签内配置`<context>`，在`<context>`内配置`<targetProject>`，如：`targetProject=\"src/main/java\"`。"}
+{"id": "TEST1-177", "input_field": "在给定的代码中，`@Property(\"class\")`注解指定了什么数据库字段名？", "output_field": "`class`"}
+{"id": "TEST1-178", "input_field": "在tugraph中是否能通过cypher语句删除图中的重复关系？", "output_field": "在TuGraph中，可以通过Cypher语句删除图中的重复关系。具体的Cypher语句需要根据图的具体结构和关系类型来编写，但一般来说，可以使用类似“MATCH (n)-[r]->(m) WHERE ... RETURN r”的语句来查找并删除重复的关系。其中，“WHERE”子句用于指定查找重复关系的条件，例如可以比较关系的属性和起始节点、终止节点等。然后，可以使用“DELETE r”来删除找到的关系。注意，在执行删除操作之前，请务必备份数据以防止意外情况发生。\n\n由于我无法直接访问你的TuGraph数据库，因此无法为你提供具体的Cypher语句。建议你参考TuGraph的官方文档或向专业人士寻求帮助来编写适合你的具体情况的Cypher语句。\n\n需要注意的是，虽然Cypher语句可以用于删除重复关系，但在执行此类操作时应谨慎行事，并确保你完全理解所执行的操作及其潜在影响。\n\n**参数**：无"}
+{"id": "TEST1-179", "input_field": "在默认情况下，第一次快照的时间如何设置？", "output_field": "在默认情况下，第一次快照的时间设置为在0-ha_snapshot_interval_s内的任一时刻随机打第一次snapshot。"}
+{"id": "TEST1-180", "input_field": "如果您想提交非原创作品给蚂蚁集团，您需要标注哪些信息？", "output_field": "需要标注作品的来源、任何您所知悉的许可或其他限制（包括但不限于相关专利、商标和许可协议）的完整信息，并以显著方式标明该作品属于“以第三方名义提交：【填写姓名】”。"}
+{"id": "TEST1-181", "input_field": "web端导入点数据后，不同的方式查询得到结果不同", "output_field": "CALL dbms.meta.countDetail()"}
+{"id": "TEST1-182", "input_field": "对象图映射（OGM）支持什么？", "output_field": "对象图映射（OGM）支持将JAVA对象（POJO）映射到TuGraph中，JAVA中的类映射为图中的节点、类中的集合映射为边、类的属性映射为图对象的属性，并提供了对应的函数操作图数据库。"}
+{"id": "TEST1-183", "input_field": "如何在单节点模式下实例化liblgraph_client_python.client对象？", "output_field": "`client = liblgraph_client_python.client(\"url\", \"user\", \"password\")`\n\n参数：url、user、password"}
+{"id": "TEST1-184", "input_field": "如果传递给 `GetRoleInfo` 函数的角色名非法，会抛出哪种异常？", "output_field": "InputError异常或BadInput异常。"}
+{"id": "TEST1-185", "input_field": "TuGraph 的部署方式有哪些？", "output_field": "TuGraph的部署方式有云部署、Docker部署以及安装包部署三种方式。"}
+{"id": "TEST1-186", "input_field": "根据使用MATCH和SKIP语句的查询结果，跳过第一行后返回的第一位人物的名字是什么？", "output_field": "Corin Redgrave"}
+{"id": "TEST1-187", "input_field": "导入数据时，如果操作失败，是否可以继续导入？", "output_field": "导入数据时，如果操作失败，**可以设置continue_on_error参数为true来继续导入剩余数据**。"}
+{"id": "TEST1-188", "input_field": "如果不定义表头并使用空的Result()初始化表，你接下来应该使用什么方法为表设置表头？", "output_field": "使用`SetFields`方法为表设置表头。\n\n需要的参数有：`field_names`、`field_values`。"}
+{"id": "TEST1-189", "input_field": "蚂蚁集团的个人贡献者许可协议主要目的是什么？", "output_field": "为厘清就个人贡献内容而授予的知识产权许可，证明就相关许可条件达成一致。"}
+{"id": "TEST1-190", "input_field": "TuGraph Mini Runtime Image 不包含哪些功能？", "output_field": "TuGraph Mini Runtime Image不包含TuGraph中Java、Python相关的功能，无C++ plugin编译运行，仅so上传。"}
+{"id": "TEST1-191", "input_field": "OlapOnDB API文档中介绍的Procedure及Embed主要使用了哪些辅助函数？", "output_field": "OlapOnDB API文档中介绍的Procedure及Embed主要使用到的辅助函数包含在OlapOnDB类中。"}
+{"id": "TEST1-192", "input_field": "在尝试为用户设置新密码时，哪些异常可能会被抛出？", "output_field": "很抱歉，由于您的问题中没有提供具体的技术环境、编程语言或框架等上下文信息，因此很难给出确切的异常类型。但一般来说，在尝试为用户设置新密码时，可能会遇到的异常包括但不限于：密码强度不足、原密码错误、新密码与旧密码相同、密码更新失败等。具体的异常信息会根据所使用的系统、框架或库而有所不同。\n\n如果需要具体的异常类型，请提供更多上下文信息，如使用的编程语言、框架、库或系统环境等。\n\n另外，根据常见的编程实践，为用户设置新密码时，通常需要提供以下参数：用户名（用于识别需要修改密码的用户）、原密码（用于验证用户身份，确保只有知道原密码的用户才能修改密码）、新密码（用户希望设置的新密码，通常需要满足一定的复杂度要求以确保安全性）。在某些情况下，可能还需要提供确认新密码的参数，以确保用户输入的新密码没有错误。"}
+{"id": "TEST1-193", "input_field": "如何使用 liblgraph_python_api.Galaxy 类创建一个新的用户账户？", "output_field": "在liblgraph_python_api中，Galaxy类没有直接提供创建新用户账户的方法。但可以通过ModUserRequest来间接实现。具体实现需要依赖底层C++ API的支持，并且可能需要管理员权限。一般来说，你需要先实例化一个Galaxy对象，然后通过该对象调用相关的方法来修改用户信息或状态，例如EnableUser或SetUserDesc等，但这些并不是直接用来创建新用户的。如果需要创建新用户，可能需要直接操作数据库或者调用更底层的API。建议查阅liblgraph的官方文档或源代码以获取更准确的信息。\n\n注意：由于我无法直接访问外部资源或特定库的文档，以上信息可能不完全准确。在实际应用中，请务必参考相关库的官方文档或向开发者社区寻求帮助。\n\n由于无法直接给出创建新用户的代码，这里提供一段示例代码，展示如何使用Galaxy类的一些基本方法（以Python为例）：\n\n```python\ngalaxy = PyGalaxy(db_path)  # 实例化Galaxy对象\ngalaxy.SetCurrentUser(username, password)  # 设置当前用户\ndb = galaxy.OpenGraph('default', False)  # 打开图数据库\n```\n\n如果需要创建用户，你可能需要调用其他API或者直接在数据库中操作，具体方法取决于liblgraph的实现和数据库的类型。如果Galaxy类确实提供了创建用户的方法，那么代码可能类似于：\n\n```python\ngalaxy.CreateUser(new_username, new_password, other_options)\n```\n\n但请注意，这只是一个假设性的示例，并非真实的API调用。在实际应用中，请务必查阅相关文档以了解正确的用法。"}
+{"id": "TEST1-194", "input_field": "调用liblgraph_python_api.GraphDB的哪个方法可以删除一个顶点标签？", "output_field": "调用liblgraph_python_api.GraphDB的`DeleteVertexLabel`方法可以删除一个顶点标签。\n\n需要的参数有：标签名。"}
+{"id": "TEST1-195", "input_field": "角色被禁用后，用户将从该角色中获得什么权限？", "output_field": "角色被禁用后，用户将无法从该角色中获得任何权限。"}
+{"id": "TEST1-196", "input_field": "TuGraph的可视化监控主要使用了哪些软件？", "output_field": "TuGraph的可视化监控主要使用了**TuGraph Monitor、Prometheus和Grafana**。"}
+{"id": "TEST1-197", "input_field": "TuGraph 服务在哪个文件中读取其配置？", "output_field": "TuGraph 服务从**lgraph.json**文件中读取其配置。"}
+{"id": "TEST1-198", "input_field": "该接口`StudentMapper`中`selectVertex`方法的超时设置是多少毫秒？", "output_field": "很抱歉，您的问题与给定的搜索结果无关，我无法为您提供答案。"}
+{"id": "TEST1-199", "input_field": "PathTraversal 类中展开当前前沿的操作可以使用哪些类型的过滤函数？", "output_field": "PathTraversal类中展开当前前沿的操作可以使用面向出边的过滤函数、面向入边的过滤函数、面向出邻居点的过滤函数和面向入邻居点的过滤函数。\n\nstd::function<bool(OutEdgeIterator &, Path &, IteratorHelper &)> out_edge_filter, std::function<bool(InEdgeIterator &, Path &, IteratorHelper &)> in_edge_filter, std::function<bool(VertexIterator &)> out_neighbour_filter, std::function<bool(VertexIterator &)> in_neighbour_filter。"}
+{"id": "TEST1-200", "input_field": "当在只读交易中调用函数时，会抛出哪种异常？", "output_field": "当在只读交易中调用函数时，并未明确说明会抛出哪种特定异常。但一般可能会遇到的错误或异常包括EINVAL，表示指定了无效的参数。\n\n需要注意的是，如果在并行写入事务中运行只读事务，此调用可能会触发显著的文件大小增长，这是因为它使用了一个只读事务。然而，这并不直接关联到特定的异常，而是一个性能和使用上的注意事项。"}
+{"id": "TEST1-201", "input_field": "UDF的支持中，如果开发的函数的语言是Python，模块通常放在什么位置？", "output_field": "在TuGraph中，如果开发的UDF函数的语言是Python，模块通常放在存储过程的文件夹中。"}
+{"id": "TEST1-202", "input_field": "在文本中，哪种资源名称对应的颜色设置为固定的“light-orange”？", "output_field": "很抱歉，由于您的问题中没有提供具体的文本内容，所以无法给出准确的答案。但可以提供一种可能的方法：在文本中搜索“light-orange”关键词，查看该颜色对应的资源名称是什么。如果需要更具体的帮助，请提供更多上下文信息。"}
+{"id": "TEST1-203", "input_field": "导入图库的数据如何删除", "output_field": "在`画布`区域右键点击一个节点数据，弹出操作悬窗，点击`删除节点`。或者可以在`操作栏`区域点击`清空画布`按钮，会清除所有画布中的数据。"}
+{"id": "TEST1-204", "input_field": "当使用 TuGraph 批量创建边时，如果请求成功，响应中将返回什么内容？", "output_field": "如果请求成功，响应中将返回状态码200 OK，表示操作成功，同时返回的data中会包含操作的返回值。"}
+{"id": "TEST1-205", "input_field": "TuGraph为什么选择使用B+树作为其底层存储数据结构？", "output_field": "TuGraph选择使用B+树作为其底层存储数据结构是因为B+树在树节点中使用拆分和合并式来更新排序数据，有较好的顺序读写性能，能最大程度发挥读性能。"}
+{"id": "TEST1-206", "input_field": "接口 \"CallProcedureToLeader\" 支持哪些参数设置以改变返回结果的格式？", "output_field": "json_format"}
+{"id": "TEST1-207", "input_field": "如何提高查询效率？", "output_field": "提高查询效率的方法有：\n\n1. 对数据表建立索引。\n2. 优化SQL查询语句。\n3. 只查询需要的字段，避免使用SELECT *。\n4. 使用连接（JOIN）来代替子查询。\n5. 使用LIMIT分页查询。\n6. 尽量避免全表扫描，首先应考虑在 where 及 order by 涉及的列上建立索引。\n7. 尽量避免在 where 子句中对字段进行 null 值判断，创建表时 NULL 是默认值，但大多数时候应该避免使用 NULL。\n8. 尽量避免在 where 子句中使用!=或<>操作符和函数或运算。\n9. 谨慎使用索引，只在必要的列上创建索引，避免在索引列上使用计算或函数。\n\n此外，针对图数据库，如TuGraph，可以通过对点或边的属性创建索引来提高查询效率。同时，根据查询需求和数据特点，选择合适的编码方式（如离散编码或紧凑编码）也可以提升查询效率。"}
+{"id": "TEST1-208", "input_field": "FieldData 类中的 integer() 方法在什么情况下会抛出 std::bad_cast 异常？", "output_field": "在FieldData类中，当尝试将非整数值转换为整数时，或者转换过程中发生其他类型不匹配的情况，integer()方法可能会抛出std::bad_cast异常。"}
+{"id": "TEST1-209", "input_field": "TuGraph-DB的存储引擎用了kv数据库么？如果是，基于什么kv数据库构建的？", "output_field": "很抱歉，我不清楚TuGraph-DB的存储引擎是否用了kv数据库，如果是，是基于什么kv数据库构建的。\n\n建议咨询数据库专业技术人士或查阅TuGraph-DB官方文档，以获取准确信息。"}
+{"id": "TEST1-210", "input_field": "请问下怎么没找到新版的browser-resource，怎么进行新旧版本的web切换呢", "output_field": "可以通过修改配置文件\"/usr/local/etc/lgraph.json\"中的\"web\"参数进行新旧版本切换，对于老版本，设\"web\"的值为\"/usr/local/share/lgraph/resource\"，新版本设为\"/usr/local/share/lgraph/browser-resource\"，修改后执行`docker restart tugraph`使更改生效。"}
+{"id": "TEST1-211", "input_field": "tugraph进行大规模数据查询时是否对图数据进行了压缩？", "output_field": "很抱歉，根据我所掌握的信息，暂时无法确定TuGraph在进行大规模数据查询时是否对图数据进行了压缩。但是，TuGraph在图数据的存储和查询方面进行了优化，例如使用直观的多层的树状模型、将图数据自适应地映射到KV键值对以提升读性能，以及在KV层实现多线程写以解决LMDB写性能较低的劣势等。这些优化措施可能有助于提高大规模数据查询的效率，但并不一定涉及到数据压缩。如需了解TuGraph是否进行了数据压缩，建议查阅TuGraph的官方文档或咨询相关技术人员。"}
+{"id": "TEST1-212", "input_field": "TuGraph选择使用哪一种树结构作为其存储数据结构，并简述选择这种结构的主要原因是什么？", "output_field": "TuGraph选择使用**B+树**作为其存储数据结构。主要原因是B+树在数据库和文件系统中有着广泛的应用，特别适合进行大量的数据读取操作，能够提供良好的读取性能，符合TuGraph性能优先的设计理念。"}
+{"id": "TEST1-213", "input_field": "TuGraph-DB使用的boost库是什么版本？", "output_field": "很抱歉，文中没有提及TuGraph-DB使用的boost库是什么版本。"}
+{"id": "TEST1-214", "input_field": "TuGraph适合哪些类型的用户？", "output_field": "TuGraph适合需要处理和分析大规模图数据的用户，特别是那些对低延迟查找和快速图分析有需求的用户。此外，TuGraph也适合需要灵活API支持，以及同时需要在线事务处理（OLTP）和在线分析处理（OLAP）的用户。"}
+{"id": "TEST1-215", "input_field": "TuGraph的REST API中，POST请求主要用途是什么？", "output_field": "用于创建实体，提交Cypher，以及加载和调用存储过程。"}
+{"id": "TEST1-216", "input_field": "安装部署TuGraph外存配置的最低和建议分别是多少？", "output_field": "安装部署TuGraph外存配置的最低是**100GB**，建议是实际数据大小的**4倍**。"}
+{"id": "TEST1-217", "input_field": "在创建一个TuGraph数据库时，如果指定的目录不存在，构造函数会如何处理？", "output_field": "很抱歉，我不知道在创建一个TuGraph数据库时，如果指定的目录不存在，构造函数会如何处理。但根据搜索结果[1]，在安装TuGraph时，用户可以通过 `--instdir=<directory>` 选项更改安装目录。如果指定的目录不存在，可能需要先创建该目录，或者安装程序会报错并提示目录不存在。具体情况可能需要参考TuGraph的官方文档或咨询相关技术支持。\n\n请注意，上述回答是基于一般的软件安装经验和TuGraph安装命令的说明，并不特定于TuGraph数据库构造函数的内部处理逻辑。对于构造函数的具体行为，需要查阅TuGraph的官方文档或源代码以获取准确信息。"}
+{"id": "TEST1-218", "input_field": "VertexIterator 的 GetNumOutEdges 方法默认的 n_limit 参数值是多少？", "output_field": "std::numeric_limits<size_t>::max()"}
+{"id": "TEST1-219", "input_field": "试图加入高可用集群时节点的默认等待秒数是多少？", "output_field": "10秒"}
+{"id": "TEST1-220", "input_field": "生成Mapper接口的时候，XMLMAPPER类型将如何实现接口方法？", "output_field": "XMLMAPPER类型将通过XML配置文件来实现Mapper接口的方法。在XML文件中，将定义与Mapper接口方法相对应的SQL语句。当调用接口方法时，MyBatis会解析对应的XML配置，执行相应的SQL语句，并返回结果。具体实现包括配置命名空间、定义SQL语句以及指定参数类型和返回类型等。这样，当调用Mapper接口的方法时，MyBatis会根据XML配置来执行相应的数据库操作。"}
+{"id": "TEST1-221", "input_field": "GCN模型的主要组成部分是什么？", "output_field": "GCN模型的主要组成部分是**图卷积层**，每层通过聚合邻居信息来计算新的点表示。"}
+{"id": "TEST1-222", "input_field": "TuGraph-DB的单元测试使用的是什么框架？", "output_field": "gtest框架"}
+{"id": "TEST1-223", "input_field": "tugraph-db可以先用cypher找一个子图，然后在这个子图上跑图分析吗？例如pagerank、kcore什么的！", "output_field": "可以。先用cypher找到一个子图，然后借助C++ OLAP API，快速地导出一个需要进行复杂分析的子图，在其上运行诸如PageRank等迭代式图计算过程。\n\n需要的参数有graphName、queryCypher等。"}
+{"id": "TEST1-224", "input_field": "HA集群的snapshot何时删除？", "output_field": "很抱歉，由于我的知识库中没有关于“HA集群的snapshot何时删除”的具体信息，因此无法为您提供确切答案。不过，您可以考虑联系HA集群的管理员或者查阅相关的技术文档，以获取更准确的信息。\n\n另外，如果您是想问如何删除HA集群的snapshot，一般来说，可以通过HA集群的管理工具或者命令行接口来进行操作。具体步骤可能因不同的HA集群实现而有所差异，因此建议您查阅相关的技术文档或者咨询技术支持人员以获取详细的指导。"}
+{"id": "TEST1-225", "input_field": "TuGraph-DB目前支持哪种查询语言，并计划在将来支持哪种查询语言？", "output_field": "TuGraph-DB目前支持的查询语言是Cypher，并计划在将来支持ISO GQL等图查询语言。"}
+{"id": "TEST1-226", "input_field": "语句里面有没有开启事务和结束事务的关键字", "output_field": "很抱歉，由于您没有给出具体的语句，所以无法判断是否存在开启和结束事务的关键字。但一般来说，在SQL中，开启事务的指令是\"BEGIN TRANSACTION\"或\"START TRANSACTION\"，结束事务并提交更改的指令是\"COMMIT\"，结束事务并撤销更改的指令是\"ROLLBACK\"。\n\n参数：无。"}
+{"id": "TEST1-227", "input_field": "如何使用命令创建一个新的角色，并为其提供描述信息？", "output_field": "CreateRole(name, desc)"}
+{"id": "TEST1-228", "input_field": "TuGraph查询语句不支持任意长度路径吧？", "output_field": "**否**，TuGraph查询语句支持任意长度路径查询。"}
+{"id": "TEST1-229", "input_field": "如果在Java运行时，targetProject在xml配置文件中应如何配置？", "output_field": "在`pom.xml`中加入如下配置：\n```xml\n<build>\n    <plugins>\n        <plugin>\n            <groupId>org.codehaus.mojo</groupId>\n            <artifactId>build-helper-maven-plugin</artifactId>\n            <version>3.0.0</version>\n            <executions>\n                <execution>\n                    <id>add-source</id>\n                    <phase>generate-sources</phase>\n                    <goals>\n                        <goal>add-source</goal>\n                    </goals>\n                    <configuration>\n                        <sources>\n                            <source>src/main/java</source>\n                            <source>target/generated-sources/annotations</source>\n                        </sources>\n                    </configuration>\n                </execution>\n            </executions>\n        </plugin>\n    </plugins>\n</build>\n```\n然后在`<dependencies>`标签内添加targetProject的依赖。"}
+{"id": "TEST1-230", "input_field": "2024年功能更新计划中支持什么角色和工具？", "output_field": "HA支持Witness角色和管理工具。"}
+{"id": "TEST1-231", "input_field": "调用 \"CallGql\" 接口时，如何指定要查询的图的名称？", "output_field": "在\"CallGql\"接口中，通过`graph`参数指定要查询的图的名称。"}
+{"id": "TEST1-232", "input_field": "图中能把属性值展示出来吗？", "output_field": "**在图分析功能中，选中一个点数据或边数据后，会在右边栏展示对应的属性信息**。"}
+{"id": "TEST1-233", "input_field": "tugraph-db如何与neo4j驱动连接？", "output_field": "tugraph-db兼容neo4j的通讯协议，因此可以使用neo4j的驱动连接tugraph-db。默认端口是7687，如果需要修改端口，在配置文件`/usr/local/etc/lgraph.json`中自行修改。"}
+{"id": "TEST1-234", "input_field": "图模型中某些边设置了属性，这些有属性的边在导入数据之后进行查询，发现查不到这些边数据", "output_field": "在导入数据后进行查询，发现查不到某些有属性的边数据，可能是因为这些边的属性在导入过程中出现了问题，或者查询条件没有正确设置。请检查导入的数据格式和查询条件是否正确，并确保导入过程中没有发生错误。如果问题仍然存在，建议查看导入数据的日志文件以获取更多信息，或者联系技术支持以获取帮助。"}
+{"id": "TEST1-235", "input_field": "在\"TuGraph-DataX\"项目中如何通过job配置文件将\"actors.csv\"导入到TuGraph？", "output_field": "建立DataX的job配置文件，如job_mysql_to_tugraph.json，配置好相关字段，然后通过执行`python3 datax/bin/datax.py job_mysql_to_tugraph.json`指令来将\"actors.csv\"导入到TuGraph。"}
+{"id": "TEST1-236", "input_field": "创建新子图时需要哪些参数？", "output_field": "graph_name, description, max_size_GB"}
+{"id": "TEST1-237", "input_field": "在test_export_default函数中，如何验证导出后再次导入的数据是否与原始数据一致？", "output_field": "在test_export_default函数中，验证导出后再次导入的数据是否与原始数据一致，可以通过比较原始数据和导入后的数据来实现。具体步骤包括：先导出原始数据，然后再次导入到新的目录中，并以新导入的数据启动数据库。在函数主体中，通过查询和比较原始数据和导入后的数据，判断它们是否一致。\n\n很抱歉，由于验证数据一致性的具体代码实现可能因应用场景和数据结构的不同而有所差异，因此无法直接给出通用的代码示例。但一般来说，可以通过比较数据的行数、列数、具体值等方式来进行验证。如果需要更具体的帮助，请提供更多关于数据结构和验证需求的信息。\n\n所需参数可能包括：原始数据库目录、导出文件存放目录、图数据库的种类、用户名、密码等。这些参数将用于指定数据的导出和导入路径，以及进行身份验证。"}
+{"id": "TEST1-238", "input_field": "Work函数在处理节点vi时，返回值代表什么？", "output_field": "Work函数在处理节点vi时，返回值代表该节点经过work函数处理后的结果值。"}
+{"id": "TEST1-239", "input_field": "TuGraph Explorer 的功能现在在哪里可以找到？", "output_field": "TuGraph Explorer 的功能现在已经合并到 TuGraph Browser 中，可以在 TuGraph Browser 中找到。"}
+{"id": "TEST1-240", "input_field": "在批量创建点的操作中，如果请求成功，TuGraph 会返回什么？", "output_field": "在批量创建点的操作中，如果请求成功，TuGraph会返回200 OK的HTTP状态码，表示操作成功。"}
+{"id": "TEST1-241", "input_field": "tugraph能否支持混合检索 vector+知识图谱？", "output_field": "**TuGraph能支持混合检索，vector+知识图谱**。因为TuGraph具有混合事务和分析处理（HTAP）能力，支持图查询、图分析、图学习，所以可以支持混合检索，包括vector+知识图谱的检索方式。"}
+{"id": "TEST1-242", "input_field": "TuGraph 数据预热的主要目的是什么？", "output_field": "改善服务器刚开启时因频繁IO操作而导致的系统性能变差的问题。"}
+{"id": "TEST1-243", "input_field": "InEdgeIterator 类的 GetSrc 方法返回什么信息？", "output_field": "VertexId GetSrc() const { return impl_.GetVid1(); }"}
+{"id": "TEST1-244", "input_field": "可选匹配子句OPTIONAL MATCH在查询中有什么作用？", "output_field": "`OPTIONAL MATCH`子句在GQL查询中用于指定一个可选的匹配模式，当模式中指定的匹配存在时，会返回相应的结果，如果不存在，仍然会返回结果，但相关字段会为null，这样可确保即使某些部分的数据不存在，整个查询也不会失败。"}
+{"id": "TEST1-245", "input_field": "GraphDB 实例无法使用的情况是什么？", "output_field": "GraphDB 实例无法使用的情况可能是数据库连接已关闭或数据库实例已被删除。"}
+{"id": "TEST1-246", "input_field": "TuGraph 运行需要保证哪个库文件的位置在环境变量 LD_LIBRARY_PATH 中？", "output_field": "liblgraph.so"}
+{"id": "TEST1-247", "input_field": "GetNumOutEdges函数如何在达到限制时响应？", "output_field": "GetNumOutEdges函数在达到限制时，会通过more_to_go参数进行响应，当扫描的vids数量达到n_limit限制时，会将more_to_go设置为true，表示还有更多的边未计算。\n\n**size_t n_limit, bool* more_to_go**。"}
+{"id": "TEST1-248", "input_field": "文本中的 BFS 算法在每次迭代中怎样更新活跃顶点数量？", "output_field": "在BFS算法中，通常使用一个队列来存储活跃顶点。在每次迭代中，从队列中取出一个顶点，并检查其所有未访问的邻居顶点。每当发现一个未访问的邻居顶点时，将其标记为已访问，并将其加入队列中。这样，队列中的顶点数量（即活跃顶点的数量）会随着迭代的进行而动态更新。具体更新方式取决于图的结构和顶点的连接情况。由于您要求不输出代码块，因此这里无法提供具体的代码实现。但一般来说，更新活跃顶点数量的逻辑会嵌入在BFS的主循环中，通过队列的入队和出队操作来实现。"}
+{"id": "TEST1-249", "input_field": "角色名的允许的最大长度是多少字节？", "output_field": "64字节"}
+{"id": "TEST1-250", "input_field": "URIs 用于修改和启用角色的 HTTP 方法是什么？", "output_field": "修改角色的HTTP方法是PUT，启用角色的HTTP方法是POST。"}
